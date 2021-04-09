@@ -20,7 +20,7 @@ html {
 
 html {
   --scrollbarBG: #200429;
-  --thumbBG: #ef8354;
+  --thumbBG: #fbe44a;
 }
 body::-webkit-scrollbar {
   width: 11px;
