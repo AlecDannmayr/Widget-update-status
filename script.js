@@ -1,3 +1,10 @@
+window.addEventListener("load", function () {
+  var loadingScreen = document.getElementById("loading-screen");
+  var bodyWrapper = document.getElementById("body-wrapper");
+  loadingScreen.style.display = "none";
+  bodyWrapper.style.display = "block";
+});
+
 $(document).ready(function () {
   function toggleSidebar() {
     $(".button").toggleClass("active");

@@ -7,8 +7,15 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-.body-wrapper {
+#body-wrapper {
   display: none;
+}
+
+#loading-screen {
+  background-color: #200429;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 html {
@@ -40,6 +47,7 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   padding-left: 40px;
   margin-top: 20px;
+  text-decoration: underline #fbe44a;
 }
 
 .container {
@@ -109,7 +117,7 @@ main {
   display: block;
   height: 5px;
   width: 50px;
-  background-color: #ef8354;
+  background-color: #fbe44a;
   margin: 10px auto;
 }
 
