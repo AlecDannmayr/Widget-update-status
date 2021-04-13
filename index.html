@@ -11,13 +11,46 @@
 
         body,
         html {
+            height: 160%;
             padding: 0;
             margin: 0;
             font-family: 'Roboto', sans-serif;
         }
 
-        html {
+
+        #body-wrapper {
+            display: none;
             height: 100%;
+        }
+
+        #loading-screen {
+            background-color: #200429;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        html {
+            --scrollbarBG: #200429;
+            --thumbBG: #fbe44a;
+        }
+
+        body::-webkit-scrollbar {
+            width: 11px;
+        }
+
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+        }
+
+        body::-webkit-scrollbar-track {
+            background: var(--scrollbarBG);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: var(--thumbBG);
+            border: 3px solid var(--scrollbarBG);
         }
 
         main {
@@ -298,41 +331,6 @@
             height: 814px;
             border: none;
         }
-
-        #body-wrapper {
-            display: none;
-        }
-
-        #loading-screen {
-            background-color: #200429;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        html {
-            --scrollbarBG: #200429;
-            --thumbBG: #fbe44a;
-        }
-
-        body::-webkit-scrollbar {
-            width: 11px;
-        }
-
-        body {
-            scrollbar-width: thin;
-            scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-        }
-
-        body::-webkit-scrollbar-track {
-            background: var(--scrollbarBG);
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background-color: var(--thumbBG);
-            border: 3px solid var(--scrollbarBG);
-        }
-
 
         /* Page content END */
 
