@@ -6,415 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Widgets</title>
-    <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <style>
-        @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic);
-
-        body,
-        html {
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            font-family: "Roboto", sans-serif;
-        }
-
-        #body-wrapper {
-            display: none;
-        }
-
-        #loading-screen {
-            background-color: #200429;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        html {
-            --scrollbarBG: #200429;
-            --thumbBG: #fbe44a;
-        }
-
-        body::-webkit-scrollbar {
-            width: 11px;
-        }
-
-        body {
-            scrollbar-width: thin;
-            scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-        }
-
-        body::-webkit-scrollbar-track {
-            background: var(--scrollbarBG);
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background-color: var(--thumbBG);
-            border: 3px solid var(--scrollbarBG);
-        }
-
-        .header {
-            display: flex;
-            justify-content: left;
-        }
-
-        .a {
-            font-size: 100px;
-            color: #fff;
-            padding-left: 40px;
-            margin-top: 20px;
-            text-decoration: underline #fbe44a;
-        }
-
-        .container {
-            display: flex;
-            justify-content: left;
-        }
-
-        .info-area h2 {
-            font-size: 70px;
-            color: #fff;
-            margin-top: -3px;
-            margin-left: 30px;
-            margin-bottom: -10px;
-        }
-
-        .info-area ul {
-            margin-left: -5px;
-            list-style: none;
-        }
-
-        .info-area ul li {
-            margin-top: 20px;
-            color: #fff;
-        }
-
-        .grid {
-            padding: 100px;
-            margin-top: -9vw;
-        }
-
-        .grid-each {
-            display: flex;
-        }
-
-        .grid>* {
-            padding: 100px;
-        }
-
-        iframe {
-            width: 413px;
-            height: 370px;
-            border: none;
-        }
-
-        main {
-            z-index: 2;
-            position: relative;
-            background: #162738;
-            background-size: auto;
-            -webkit-transition: transform 0.7s ease-in-out;
-            -moz-transition: transform 0.7s ease-in-out;
-            -ms-transition: transform 0.7s ease-in-out;
-            -o-transition: transform 0.7s ease-in-out;
-            transition: transform 0.7s ease-in-out;
-        }
-
-        .sidebar {
-            height: 100%;
-            width: 400px;
-            position: fixed;
-            top: 0;
-            z-index: 1;
-            right: 0;
-            background-color: #ef8354;
-        }
-
-        .bar {
-            display: block;
-            height: 5px;
-            width: 50px;
-            background-color: #fbe44a;
-            margin: 10px auto;
-        }
-
-        .button {
-            cursor: pointer;
-            display: inline-block;
-            width: auto;
-            margin: 0 auto;
-            -webkit-transition: all 0.7s ease;
-            -moz-transition: all 0.7s ease;
-            -ms-transition: all 0.7s ease;
-            -o-transition: all 0.7s ease;
-            transition: all 0.7s ease;
-        }
-
-        .nav-right {
-            position: fixed;
-            right: 40px;
-            top: 40px;
-        }
-
-        .nav-right.visible-xs {
-            z-index: 3;
-        }
-
-        .hidden-xs {
-            display: none;
-        }
-
-        .middle {
-            margin: 0 auto;
-        }
-
-        .bar {
-            -webkit-transition: all 0.7s ease;
-            -moz-transition: all 0.7s ease;
-            -ms-transition: all 0.7s ease;
-            -o-transition: all 0.7s ease;
-            transition: all 0.7s ease;
-        }
-
-        .nav-right.visible-xs .active .bar {
-            background-color: #fff;
-            -webkit-transition: all 0.7s ease;
-            -moz-transition: all 0.7s ease;
-            -ms-transition: all 0.7s ease;
-            -o-transition: all 0.7s ease;
-            transition: all 0.7s ease;
-        }
-
-        .button.active .top {
-            -webkit-transform: translateY(15px) rotateZ(45deg);
-            -moz-transform: translateY(15px) rotateZ(45deg);
-            -ms-transform: translateY(15px) rotateZ(45deg);
-            -o-transform: translateY(15px) rotateZ(45deg);
-            transform: translateY(15px) rotateZ(45deg);
-        }
-
-        .button.active .bottom {
-            -webkit-transform: translateY(-15px) rotateZ(-45deg);
-            -moz-transform: translateY(-15px) rotateZ(-45deg);
-            -ms-transform: translateY(-15px) rotateZ(-45deg);
-            -o-transform: translateY(-15px) rotateZ(-45deg);
-            transform: translateY(-15px) rotateZ(-45deg);
-        }
-
-        .button.active .middle {
-            width: 0;
-        }
-
-        .move-to-left {
-            -webkit-transform: translateX(-400px);
-            -moz-transform: translateX(-400px);
-            -ms-transform: translateX(-400px);
-            -o-transform: translateX(-400px);
-            transform: translateX(-400px);
-        }
-
-        nav {
-            padding-top: 30px;
-        }
-
-        .sidebar-list {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            position: relative;
-            margin-top: 92px;
-            text-align: center;
-        }
-
-        .sidebar-item {
-            margin: 30px 0;
-            opacity: 0;
-            -webkit-transform: translateY(-20px);
-            -moz-transform: translateY(-20px);
-            -ms-transform: translateY(-20px);
-            -o-transform: translateY(-20px);
-            transform: translateY(-20px);
-        }
-
-        .sidebar-item {
-            -webkit-transition: all 0.7s 0.2s ease-in-out;
-            -moz-transition: all 0.7s 0.2s ease-in-out;
-            -ms-transition: all 0.7s 0.2s ease-in-out;
-            -o-transition: all 0.7s 0.2s ease-in-out;
-            transition: all 0.7s 0.2s ease-in-out;
-        }
-
-        .sidebar-item.active {
-            opacity: 1;
-            -webkit-transform: translateY(0px);
-            -moz-transform: translateY(0px);
-            -ms-transform: translateY(0px);
-            -o-transform: translateY(0px);
-            transform: translateY(0px);
-        }
-
-        .sidebar-anchor {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            position: relative;
-            padding-bottom: 7px;
-        }
-
-        .sidebar-anchor:before {
-            content: "";
-            width: 0;
-            height: 2px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background-color: #fff;
-            -webkit-transition: all 0.7s ease-in-out;
-            -moz-transition: all 0.7s ease-in-out;
-            -ms-transition: all 0.7s ease-in-out;
-            -o-transition: all 0.7s ease-in-out;
-            transition: all 0.7s ease-in-out;
-        }
-
-        .sidebar-anchor:hover:before {
-            width: 100%;
-        }
-
-        .ua {
-            position: absolute;
-            bottom: 20px;
-            left: 30px;
-        }
-
-        .fa {
-            font-size: 1.4em;
-            color: #ef8354;
-            -webkit-transition: all 1s ease;
-            -moz-transition: all 1s ease;
-            -ms-transition: all 1s ease;
-            -o-transition: all 1s ease;
-            transition: all 1s ease;
-        }
-
-        .ua:hover .fa {
-            color: #fff;
-            -webkit-transform: scale(1.3);
-            -moz-transform: scale(1.3);
-            -ms-transform: scale(1.3);
-            -o-transform: scale(1.3);
-            transform: scale(1.3);
-            -webkit-transition: all 1s ease;
-            -moz-transition: all 1s ease;
-            -ms-transition: all 1s ease;
-            -o-transition: all 1s ease;
-            transition: all 1s ease;
-        }
-
-        footer {
-            background-color: #ef8354;
-            height: 140px;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-        }
-
-        footer p {
-            margin-top: 30px;
-            color: #fff;
-        }
-
-        #loader-6 #loader {
-            position: relative;
-            left: 50%;
-            top: 50%;
-            z-index: 2;
-        }
-
-        #loader-6 #loader {
-            height: 0.5vw;
-            width: 0.5vw;
-            border-radius: 100%;
-            display: inline-block;
-            box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-            animation: dots 4s infinite ease-in-out;
-        }
-
-        @keyframes dots {
-            0% {
-                box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-            }
-
-            8.33% {
-                box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-            }
-
-            16.67% {
-                box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw 1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-            }
-
-            25% {
-                box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-            }
-
-            33.33% {
-                box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue -1vw -1vw 0 0.5vw;
-            }
-
-            41.67% {
-                box-shadow: red 1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-            }
-
-            50% {
-                box-shadow: red 1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-            }
-
-            58.33% {
-                box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-            }
-
-            66.67% {
-                box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw -1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-            }
-
-            75% {
-                box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-            }
-
-            83.33% {
-                box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue 1vw 1vw 0 0.5vw;
-            }
-
-            91.67% {
-                box-shadow: red -1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-            }
-
-            100% {
-                box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-            }
-        }
-
-        @media (min-width: 768px) {
-
-            .nav-right {
-                position: absolute;
-            }
-
-            .hidden-xs {
-                display: block;
-            }
-
-            .visible-xs {
-                display: none;
-            }
-        }
-
-        @media (min-width: 480px) {
-            .nav-list {
-                display: block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -431,6 +23,7 @@
                 <div class="bar bottom"></div>
             </div>
         </div>
+        <!-- nav-right -->
         <main>
             <div class="header">
                 <h1 class="a">Widgets.</h1>
@@ -439,8 +32,9 @@
                 <div class="grid">
                     <div class="grid-each">
                         <div class="widget-frame-1"><iframe style="visibility:hidden;"
-                                onload="this.style.visibility='visible';"
-                                src="http://widget.decimalcricket.com/basicscoreboard/"></iframe></div>
+                                onload="this.style.visibility = 'visible';"
+                                src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                        </div>
                         <div class="info-area">
                             <h2>Basic Scoreboard</h2>
                             <ul>
@@ -454,6 +48,34 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="widget-frame-2"><iframe style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';"
+                            src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                    </div>
+                    <div class="widget-frame-2"><iframe style=" background-color: #FFF;" style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';" src=""></iframe>
+                    </div>
+                    <div class="widget-frame-2"><iframe style=" background-color: #FFF;" style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';" src=""></iframe>
+                    </div>
+                    <div class="widget-frame-2"><iframe style=" background-color: #FFF;" style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';" src=""></iframe>
+                    </div>
+                    <div class="widget-frame-2"><iframe style=" background-color: #FFF;" style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';" src=""></iframe>
+                    </div>
+                    <div class="widget-frame-2"><iframe style=" background-color: #FFF;" style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';" src=""></iframe>
+                    </div>
+                    <div class="widget-frame-2"><iframe style=" background-color: #FFF;" style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';" src=""></iframe>
+                    </div>
+                    <div class="widget-frame-2"><iframe style=" background-color: #FFF;" style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';" src=""></iframe>
+                    </div>
+                    <div class="widget-frame-2"><iframe style=" background-color: #FFF;" style="visibility:hidden;"
+                            onload="this.style.visibility = 'visible';" src=""></iframe>
+                    </div>
                 </div>
             </div>
             <nav>
@@ -464,6 +86,7 @@
                         <div class="bar bottom"></div>
                     </div>
                 </div>
+                <!-- nav-right -->
             </nav>
         </main>
         <div class="sidebar">
@@ -482,11 +105,16 @@
             </ul>
         </div>
         <footer>
-            <p>Trident House<br />42-48 Victoria Street<br />St Albans<br />AL1 3HZ<br />Company No:10915739 </p>
+            <p>
+                Trident House<br />
+                42-48 Victoria Street<br />
+                St Albans<br />AL1 3HZ<br />
+                Company No:10915739
+            </p>
         </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>window.addEventListener("load", function () { var e = document.getElementById("loading-screen"), t = document.getElementById("body-wrapper"); (e.style.display = "none"), (t.style.display = "block") }), $(document).ready(function () { function e() { $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active"); } $(".button").on("click tap", function () { e(); }), $(document).keyup(function (t) { 27 === t.keyCode && e(); }); });</script>
+    <script src="script.js"></script>
 </body>
 
 </html>
