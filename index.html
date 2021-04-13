@@ -11,10 +11,13 @@
 
         body,
         html {
-            height: 160%;
             padding: 0;
             margin: 0;
             font-family: 'Roboto', sans-serif;
+        }
+
+        html {
+            height: 100%;
         }
 
         main {
@@ -137,53 +140,12 @@
 
         .sidebar-item {
             margin: 30px 0;
-            opacity: 0;
             -webkit-transform: translateY(-20px);
             -moz-transform: translateY(-20px);
             -ms-transform: translateY(-20px);
             -o-transform: translateY(-20px);
             transform: translateY(-20px);
-        }
-
-        .sidebar-item:first-child {
-            -webkit-transition: all .7s .2s ease-in-out;
-            -moz-transition: all .7s .2s ease-in-out;
-            -ms-transition: all .7s .2s ease-in-out;
-            -o-transition: all .7s .2s ease-in-out;
-            transition: all .7s .2s ease-in-out;
-        }
-
-        .sidebar-item:nth-child(2) {
-            -webkit-transition: all .7s .4s ease-in-out;
-            -moz-transition: all .7s .4s ease-in-out;
-            -ms-transition: all .7s .4s ease-in-out;
-            -o-transition: all .7s .4s ease-in-out;
-            transition: all .7s .4s ease-in-out;
-        }
-
-        .sidebar-item:nth-child(3) {
-            -webkit-transition: all .7s .6s ease-in-out;
-            -moz-transition: all .7s .6s ease-in-out;
-            -ms-transition: all .7s .6s ease-in-out;
-            -o-transition: all .7s .6s ease-in-out;
-            transition: all .7s .6s ease-in-out;
-        }
-
-        .sidebar-item:last-child {
-            -webkit-transition: all .7s .8s ease-in-out;
-            -moz-transition: all .7s .8s ease-in-out;
-            -ms-transition: all .7s .8s ease-in-out;
-            -o-transition: all .7s .8s ease-in-out;
-            transition: all .7s .6s ease-in-out;
-        }
-
-        .sidebar-item.active {
-            opacity: 1;
-            -webkit-transform: translateY(0px);
-            -moz-transform: translateY(0px);
-            -ms-transform: translateY(0px);
-            -o-transform: translateY(0px);
-            transform: translateY(0px);
+            font-size: 12px;
         }
 
         .sidebar-anchor {
@@ -227,6 +189,76 @@
             padding-top: 20px;
         }
 
+        #loader-6 #loader {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            z-index: 2;
+        }
+
+        #loader-6 #loader {
+            height: 0.5vw;
+            width: 0.5vw;
+            border-radius: 100%;
+            display: inline-block;
+            box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+            animation: dots 4s infinite ease-in-out;
+        }
+
+        @keyframes dots {
+            0% {
+                box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+            }
+
+            8.33% {
+                box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+            }
+
+            16.67% {
+                box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw 1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+            }
+
+            25% {
+                box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+            }
+
+            33.33% {
+                box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue -1vw -1vw 0 0.5vw;
+            }
+
+            41.67% {
+                box-shadow: red 1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+            }
+
+            50% {
+                box-shadow: red 1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+            }
+
+            58.33% {
+                box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+            }
+
+            66.67% {
+                box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw -1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+            }
+
+            75% {
+                box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+            }
+
+            83.33% {
+                box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue 1vw 1vw 0 0.5vw;
+            }
+
+            91.67% {
+                box-shadow: red -1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+            }
+
+            100% {
+                box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+            }
+        }
+
         .header h1 {
             font-size: 100px;
             text-decoration: underline #FBE44A;
@@ -238,6 +270,7 @@
         .container {
             padding: 60px;
             padding-top: 0px;
+            margin-top: -30px;
         }
 
         .grid-each {
@@ -245,23 +278,61 @@
         }
 
         .info-area {
-            margin-top: 200px;
+            margin-top: 120px;
+            margin-left: 30px;
         }
 
         .info-area ul li {
-            padding: 40px 0px;
+            padding: 20px 0px;
             color: #fff;
+            font-size: 18px;
         }
 
         .widget-frame-1 h2 {
-            font-size: 70px;
+            font-size: 50px;
             color: #FFF;
         }
 
         iframe {
             width: 414px;
             height: 814px;
+            border: none;
         }
+
+        #body-wrapper {
+            display: none;
+        }
+
+        #loading-screen {
+            background-color: #200429;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        html {
+            --scrollbarBG: #200429;
+            --thumbBG: #fbe44a;
+        }
+
+        body::-webkit-scrollbar {
+            width: 11px;
+        }
+
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+        }
+
+        body::-webkit-scrollbar-track {
+            background: var(--scrollbarBG);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: var(--thumbBG);
+            border: 3px solid var(--scrollbarBG);
+        }
+
 
         /* Page content END */
 
@@ -288,92 +359,78 @@
 </head>
 
 <body>
-    <div class="nav-right visible-xs">
-        <div class="button" id="btn">
-            <div class="bar top"></div>
-            <div class="bar middle"></div>
-            <div class="bar bottom"></div>
+    <div id="loading-screen">
+        <div class="loader-wrapper" id="loader-6">
+            <div id="loader"></div>
         </div>
     </div>
-    <!-- nav-right -->
-    <main>
-        <nav>
-            <div class="nav-right hidden-xs">
-                <div class="button" id="btn">
-                    <div class="bar top"></div>
-                    <div class="bar middle"></div>
-                    <div class="bar bottom"></div>
-                </div>
-            </div>
-            <!-- nav-right -->
-        </nav>
-        <div class="header">
-            <h1 class="a">Widgets.</h1>
-        </div>
-        <div class="container">
-            <div class="grid">
-                <div class="grid-each">
-                    <div class="widget-frame-1">
-                        <h2>Basic Scoreboard</h2><iframe style="visibility:hidden;"
-                            onload="this.style.visibility='visible';"
-                            src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
-                    </div>
-                    <div class="info-area">
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                </div>
+    <div id="body-wrapper">
+        <div class="nav-right visible-xs">
+            <div class="button" id="btn">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
             </div>
         </div>
-        <footer>
-            <p>Trident House<br />42-48 Victoria Street<br />St Albans<br />AL1 3HZ<br />Company No:10915739 </p>
-        </footer>
-    </main>
+        <!-- nav-right -->
+        <main>
+            <nav>
+                <div class="nav-right hidden-xs">
+                    <div class="button" id="btn">
+                        <div class="bar top"></div>
+                        <div class="bar middle"></div>
+                        <div class="bar bottom"></div>
+                    </div>
+                </div>
+                <!-- nav-right -->
+            </nav>
+            <div class="header">
+                <h1 class="a">Widgets.</h1>
+            </div>
+            <div class="container">
+                <div class="grid">
+                    <div class="grid-each">
+                        <div class="widget-frame-1">
+                            <h2>.Basic Scoreboard</h2><iframe style="visibility:hidden;"
+                                onload="this.style.visibility='visible';"
+                                src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                        </div>
+                        <div class="info-area">
+                            <ul>
+                                <li>Basic team scoring, overs and wickets.</li>
+                                <li>Powerbar indicating win probability.</li>
+                                <li>Game by play commentary.</li>
+                                <li>Basic Batting and bowling data.</li>
+                                <li>Team lineup date.</li>
+                                <li>Use on any match.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p>Trident House<br />42-48 Victoria Street<br />St Albans<br />AL1 3HZ<br />Company No:10915739 </p>
+            </footer>
+        </main>
 
-    <div class="sidebar">
-        <ul class="sidebar-list">
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">All Widgets</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Scoreboard</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Scoreboard</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Pre Match Report</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Tournament Display</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Tournament Display</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Tournament Display</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS Batting Profile</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS AVRatings</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Scoreboard</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Web App Example</a></li>
-        </ul>
+        <div class="sidebar">
+            <ul class="sidebar-list">
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">All Widgets</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Scoreboard</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Scoreboard</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Pre Match Report</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Tournament Display</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Tournament Display</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Tournament Display</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS Batting Profile</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS AVRatings</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Scoreboard</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Web App Example</a></li>
+            </ul>
+        </div>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-
-            function toggleSidebar() {
-                $(".button").toggleClass("active");
-                $("main").toggleClass("move-to-left");
-                $(".sidebar-item").toggleClass("active");
-            }
-
-            $(".button").on("click tap", function () {
-                toggleSidebar();
-            });
-
-            $(document).keyup(function (e) {
-                if (e.keyCode === 27) {
-                    toggleSidebar();
-                }
-            });
-
-        });
-    </script>
+    <script>window.addEventListener("load", function () { var e = document.getElementById("loading-screen"), t = document.getElementById("body-wrapper"); (e.style.display = "none"), (t.style.display = "block") }), $(document).ready(function () { function e() { $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active"); } $(".button").on("click tap", function () { e(); }), $(document).keyup(function (t) { 27 === t.keyCode && e(); }); });</script>
 </body>
 
 </html>
