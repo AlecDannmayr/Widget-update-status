@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Widgets</title>
     <style>
-      @import url(https://fonts.googleapis.com/css?family=roboto:400,400italic,700,700italic);
-
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
       body,
       html {
         height: 100%;
         padding: 0;
         margin: 0;
         font-family: "Roboto", sans-serif;
+        width: 100%;
       }
 
       #body-wrapper {
         display: none;
         height: 100%;
+        width: 100%;
       }
 
       #loading-screen {
@@ -232,75 +233,61 @@
         width: 0.5vw;
         border-radius: 100%;
         display: inline-block;
-        box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw,
-          white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+        box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
         animation: dots 4s infinite ease-in-out;
       }
 
       @keyframes dots {
         0% {
-          box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw,
-            white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+          box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
         }
 
         8.33% {
-          box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw,
-            white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+          box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
         }
 
         16.67% {
-          box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw 1vw 0 0.5vw,
-            white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+          box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw 1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
         }
 
         25% {
-          box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw,
-            white -1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+          box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
         }
 
         33.33% {
-          box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw,
-            white -1vw -1vw 0 0.5vw, blue -1vw -1vw 0 0.5vw;
+          box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue -1vw -1vw 0 0.5vw;
         }
 
         41.67% {
-          box-shadow: red 1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw,
-            white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+          box-shadow: red 1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
         }
 
         50% {
-          box-shadow: red 1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw,
-            white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+          box-shadow: red 1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
         }
 
         58.33% {
-          box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw,
-            white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+          box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
         }
 
         66.67% {
-          box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw -1vw 0 0.5vw,
-            white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+          box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw -1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
         }
 
         75% {
-          box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw,
-            white 1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+          box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
         }
 
         83.33% {
-          box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw,
-            white 1vw 1vw 0 0.5vw, blue 1vw 1vw 0 0.5vw;
+          box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue 1vw 1vw 0 0.5vw;
         }
 
         91.67% {
-          box-shadow: red -1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw,
-            white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+          box-shadow: red -1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
         }
 
         100% {
-          box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw,
-            white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+          box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
         }
       }
 
@@ -402,11 +389,7 @@
             <div class="grid-each">
               <div class="widget-frame-1">
                 <h2>.Basic Scoreboard</h2>
-                <iframe
-                  style="visibility: hidden"
-                  onload="this.style.visibility='visible';"
-                  src="http://widget.decimalcricket.com/basicscoreboard/"
-                ></iframe>
+                <iframe style="visibility: hidden" onload="this.style.visibility='visible';" src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
               </div>
               <div class="info-area">
                 <ul>
@@ -422,10 +405,7 @@
           </div>
         </div>
         <footer>
-          <p>
-            Trident House<br />42-48 Victoria Street<br />St Albans<br />AL1
-            3HZ<br />Company No:10915739
-          </p>
+          <p> Trident House<br />42-48 Victoria Street<br />St Albans<br />AL1 3HZ<br />Company No:10915739 </p>
         </footer>
       </main>
 
@@ -447,9 +427,7 @@
             <a href="#" class="sidebar-anchor">Basic Tournament Display</a>
           </li>
           <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor"
-              >Intermediate Tournament Display</a
-            >
+            <a href="#" class="sidebar-anchor">Intermediate Tournament Display</a>
           </li>
           <li class="sidebar-item">
             <a href="#" class="sidebar-anchor">Advanced Tournament Display</a>
@@ -478,9 +456,7 @@
       }),
         $(document).ready(function () {
           function e() {
-            $(".button").toggleClass("active"),
-              $("main").toggleClass("move-to-left"),
-              $(".sidebar-item").toggleClass("active");
+            $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
           }
           $(".button").on("click tap", function () {
             e();
