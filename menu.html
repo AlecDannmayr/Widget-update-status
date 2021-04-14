@@ -591,16 +591,15 @@
           });
       });
 
+    var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", {
+      method: "GET",
+      headers: {
+        "x-api-key": "decimaltest",
+        "Content-Type": "application/json",
+      },
+    });
 
-    const api_url = 'http://feed.decimalcricket.com/api/match/list';
-
-
-    const response = fetch(api_url);
-    const data = response.json();
-    const { matches } = data;
-                //   const velMph = velocity * 0.62137119223733;
-                // const altMph = altitude * 0.62137119223733;
-
+    console.log(0);
 
   </script>
 </body>
