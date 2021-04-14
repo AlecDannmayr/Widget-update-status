@@ -1,347 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Widgets</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-      body,
-      html {
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        font-family: "Roboto", sans-serif;
-        width: 100%;
-      }
 
-      #body-wrapper {
-        display: none;
-        height: 100%;
-width: 100%;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Widgets</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-      #loading-screen {
-        background-color: #200429;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-      }
+    body,
+    html {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      width: 100%;
+    }
 
-      html {
-        --scrollbarBG: #200429;
-        --thumbBG: #fbe44a;
-      }
+    #body-wrapper {
+      display: none;
+      height: 100%;
+      width: 100%;
+    }
 
-      body::-webkit-scrollbar {
-        width: 11px;
-      }
+    #loading-screen {
+      background-color: #200429;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }
 
-      body {
-        scrollbar-width: thin;
-        scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-      }
+    html {
+      --scrollbarBG: #200429;
+      --thumbBG: #fbe44a;
+    }
 
-      body::-webkit-scrollbar-track {
-        background: var(--scrollbarBG);
-      }
+    body::-webkit-scrollbar {
+      width: 11px;
+    }
 
-      body::-webkit-scrollbar-thumb {
-        background-color: var(--thumbBG);
-        border: 3px solid var(--scrollbarBG);
-      }
+    body {
+      scrollbar-width: thin;
+      scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    }
 
-      main {
-        z-index: 2;
-        position: relative;
-        height: 200%;
-        background-color: #162738;
-        -webkit-transition: transform 0.7s ease-in-out;
-        -moz-transition: transform 0.7s ease-in-out;
-        -ms-transition: transform 0.7s ease-in-out;
-        -o-transition: transform 0.7s ease-in-out;
-        transition: transform 0.7s ease-in-out;
-      }
+    body::-webkit-scrollbar-track {
+      background: var(--scrollbarBG);
+    }
 
-      .sidebar {
-        height: 100%;
-        width: 400px;
-        position: fixed;
-        top: 0;
-        z-index: 1;
-        right: 0;
-        background-color: #ef8354;
-      }
+    body::-webkit-scrollbar-thumb {
+      background-color: var(--thumbBG);
+      border: 3px solid var(--scrollbarBG);
+    }
 
-      .bar {
-        display: block;
-        height: 5px;
-        width: 50px;
-        background-color: #fbe44a;
-        margin: 10px auto;
-      }
+    main {
+      z-index: 2;
+      position: relative;
+      height: 200%;
+      background-color: #162738;
+      -webkit-transition: transform 0.7s ease-in-out;
+      -moz-transition: transform 0.7s ease-in-out;
+      -ms-transition: transform 0.7s ease-in-out;
+      -o-transition: transform 0.7s ease-in-out;
+      transition: transform 0.7s ease-in-out;
+    }
 
-      .button {
-        cursor: pointer;
-        display: inline-block;
-        width: auto;
-        margin: 0 auto;
-        -webkit-transition: all 0.7s ease;
-        -moz-transition: all 0.7s ease;
-        -ms-transition: all 0.7s ease;
-        -o-transition: all 0.7s ease;
-        transition: all 0.7s ease;
-      }
+    .sidebar {
+      height: 100%;
+      width: 400px;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      right: 0;
+      background-color: #ef8354;
+    }
 
-      .nav-right {
-        position: fixed;
-        right: 40px;
-        top: 20px;
-      }
+    .sidebar-fixtures {
+      height: 100%;
+      width: 400px;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      left: 0;
+      background-color: #ef8354;
+    }
 
-      .nav-right.visible-xs {
-        z-index: 3;
-      }
+    .bar {
+      display: block;
+      height: 5px;
+      width: 50px;
+      background-color: #fbe44a;
+      margin: 10px auto;
+    }
 
-      .hidden-xs {
-        display: none;
-      }
+    .button {
+      cursor: pointer;
+      display: inline-block;
+      width: auto;
+      margin: 0 auto;
+      -webkit-transition: all 0.7s ease;
+      -moz-transition: all 0.7s ease;
+      -ms-transition: all 0.7s ease;
+      -o-transition: all 0.7s ease;
+      transition: all 0.7s ease;
+    }
 
-      .middle {
-        margin: 0 auto;
-      }
+    .nav-right {
+      position: fixed;
+      right: 40px;
+      top: 20px;
+    }
 
-      .bar {
-        -webkit-transition: all 0.7s ease;
-        -moz-transition: all 0.7s ease;
-        -ms-transition: all 0.7s ease;
-        -o-transition: all 0.7s ease;
-        transition: all 0.7s ease;
-      }
+    .nav-right.visible-xs {
+      z-index: 3;
+    }
 
-      .nav-right.visible-xs .active .bar {
-        background-color: #fff;
-        -webkit-transition: all 0.7s ease;
-        -moz-transition: all 0.7s ease;
-        -ms-transition: all 0.7s ease;
-        -o-transition: all 0.7s ease;
-        transition: all 0.7s ease;
-      }
+    .hidden-xs {
+      display: none;
+    }
 
-      .button.active .top {
-        -webkit-transform: translateY(15px) rotateZ(45deg);
-        -moz-transform: translateY(15px) rotateZ(45deg);
-        -ms-transform: translateY(15px) rotateZ(45deg);
-        -o-transform: translateY(15px) rotateZ(45deg);
-        transform: translateY(15px) rotateZ(45deg);
-      }
+    .middle {
+      margin: 0 auto;
+    }
 
-      .button.active .bottom {
-        -webkit-transform: translateY(-15px) rotateZ(-45deg);
-        -moz-transform: translateY(-15px) rotateZ(-45deg);
-        -ms-transform: translateY(-15px) rotateZ(-45deg);
-        -o-transform: translateY(-15px) rotateZ(-45deg);
-        transform: translateY(-15px) rotateZ(-45deg);
-      }
+    .bar {
+      -webkit-transition: all 0.7s ease;
+      -moz-transition: all 0.7s ease;
+      -ms-transition: all 0.7s ease;
+      -o-transition: all 0.7s ease;
+      transition: all 0.7s ease;
+    }
 
-      .button.active .middle {
-        width: 0;
-      }
+    .nav-right.visible-xs .active .bar {
+      background-color: #fff;
+      -webkit-transition: all 0.7s ease;
+      -moz-transition: all 0.7s ease;
+      -ms-transition: all 0.7s ease;
+      -o-transition: all 0.7s ease;
+      transition: all 0.7s ease;
+    }
 
-      .move-to-left {
-        -webkit-transform: translateX(-400px);
-        -moz-transform: translateX(-400px);
-        -ms-transform: translateX(-400px);
-        -o-transform: translateX(-400px);
-        transform: translateX(-400px);
-      }
+    .button.active .top {
+      -webkit-transform: translateY(15px) rotateZ(45deg);
+      -moz-transform: translateY(15px) rotateZ(45deg);
+      -ms-transform: translateY(15px) rotateZ(45deg);
+      -o-transform: translateY(15px) rotateZ(45deg);
+      transform: translateY(15px) rotateZ(45deg);
+    }
 
-      nav {
-        padding-top: 30px;
-      }
+    .button.active .bottom {
+      -webkit-transform: translateY(-15px) rotateZ(-45deg);
+      -moz-transform: translateY(-15px) rotateZ(-45deg);
+      -ms-transform: translateY(-15px) rotateZ(-45deg);
+      -o-transform: translateY(-15px) rotateZ(-45deg);
+      transform: translateY(-15px) rotateZ(-45deg);
+    }
 
-      .sidebar-list {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        position: relative;
-        margin-top: 150px;
-        text-align: center;
-      }
+    .button.active .middle {
+      width: 0;
+    }
 
-      .sidebar-item {
-        margin: 30px 0;
-        -webkit-transform: translateY(-20px);
-        -moz-transform: translateY(-20px);
-        -ms-transform: translateY(-20px);
-        -o-transform: translateY(-20px);
-        transform: translateY(-20px);
-        font-size: 12px;
-      }
+    .move-to-left {
+      -webkit-transform: translateX(-400px);
+      -moz-transform: translateX(-400px);
+      -ms-transform: translateX(-400px);
+      -o-transform: translateX(-400px);
+      transform: translateX(-400px);
+    }
 
-      .sidebar-anchor {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.8em;
-        text-transform: uppercase;
-        position: relative;
-        padding-bottom: 7px;
-      }
+    nav {
+      padding-top: 30px;
+    }
 
-      .sidebar-anchor:before {
-        content: "";
-        width: 0;
-        height: 2px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background-color: #fff;
-        -webkit-transition: all 0.7s ease-in-out;
-        -moz-transition: all 0.7s ease-in-out;
-        -ms-transition: all 0.7s ease-in-out;
-        -o-transition: all 0.7s ease-in-out;
-        transition: all 0.7s ease-in-out;
-      }
+    .sidebar-list,
+    .sidebar-list-fixtures {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: relative;
+      margin-top: 150px;
+      text-align: center;
+    }
 
-      .sidebar-anchor:hover:before {
-        width: 100%;
-      }
+    .sidebar-item,
+    .sidebar-item-fixtures {
+      margin: 30px 0;
+      -webkit-transform: translateY(-20px);
+      -moz-transform: translateY(-20px);
+      -ms-transform: translateY(-20px);
+      -o-transform: translateY(-20px);
+      transform: translateY(-20px);
+      font-size: 12px;
+    }
 
-      /* Page content */
+    .sidebar-anchor,
+    .sidebar-anchor-fixtures {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.8em;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 7px;
+    }
 
-      footer {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        height: 140px;
-        background-color: #ef8354;
-        text-align: center;
-        color: #fff;
-        padding-top: 20px;
-      }
+    .sidebar-anchor:before {
+      content: "";
+      width: 0;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      -webkit-transition: all 0.7s ease-in-out;
+      -moz-transition: all 0.7s ease-in-out;
+      -ms-transition: all 0.7s ease-in-out;
+      -o-transition: all 0.7s ease-in-out;
+      transition: all 0.7s ease-in-out;
+    }
 
-      #loader-6 #loader {
-        position: relative;
-        left: 50%;
-        top: 50%;
-        z-index: 2;
-      }
+    .sidebar-anchor:hover:before {
+      width: 100%;
+    }
 
-      #loader-6 #loader {
-        height: 0.5vw;
-        width: 0.5vw;
-        border-radius: 100%;
-        display: inline-block;
+    /* Page content */
+
+    footer {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      height: 140px;
+      background-color: #ef8354;
+      text-align: center;
+      color: #fff;
+      padding-top: 20px;
+    }
+
+    #loader-6 #loader {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      z-index: 2;
+    }
+
+    #loader-6 #loader {
+      height: 0.5vw;
+      width: 0.5vw;
+      border-radius: 100%;
+      display: inline-block;
+      box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+      animation: dots 4s infinite ease-in-out;
+    }
+
+    @keyframes dots {
+      0% {
         box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-        animation: dots 4s infinite ease-in-out;
       }
 
-      @keyframes dots {
-        0% {
-          box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-        }
-
-        8.33% {
-          box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-        }
-
-        16.67% {
-          box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw 1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-        }
-
-        25% {
-          box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-        }
-
-        33.33% {
-          box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue -1vw -1vw 0 0.5vw;
-        }
-
-        41.67% {
-          box-shadow: red 1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-        }
-
-        50% {
-          box-shadow: red 1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-        }
-
-        58.33% {
-          box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-        }
-
-        66.67% {
-          box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw -1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-        }
-
-        75% {
-          box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
-        }
-
-        83.33% {
-          box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue 1vw 1vw 0 0.5vw;
-        }
-
-        91.67% {
-          box-shadow: red -1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-        }
-
-        100% {
-          box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
-        }
+      8.33% {
+        box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
       }
 
-      .header h1 {
-        font-size: 100px;
-        text-decoration: underline #fbe44a;
-        color: #fff;
-        margin-left: 60px;
-        margin-top: -20px;
+      16.67% {
+        box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw 1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
       }
 
-      .container {
-        padding: 60px;
-        padding-top: 0px;
-        margin-top: -30px;
+      25% {
+        box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
       }
 
-      .grid-each {
-        display: flex;
+      33.33% {
+        box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue -1vw -1vw 0 0.5vw;
       }
 
-      .info-area {
-        margin-top: 120px;
-        margin-left: 30px;
+      41.67% {
+        box-shadow: red 1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
       }
 
-      .info-area ul li {
-        padding: 20px 0px;
-        color: #fff;
-        font-size: 18px;
+      50% {
+        box-shadow: red 1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
       }
 
-      .widget-frame-1 h2 {
-        font-size: 50px;
-        color: #fff;
+      58.33% {
+        box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
       }
 
-      iframe {
-        width: 414px;
-        height: 814px;
-        border: none;
+      66.67% {
+        box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw -1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
       }
 
-      /* Page content END */
-
-      @media (min-width: 480px) {
-        .nav-list {
-          display: block;
-        }
+      75% {
+        box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
       }
-     
 
-      @media (max-width: 768px) {
-        
+      83.33% {
+        box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue 1vw 1vw 0 0.5vw;
+      }
+
+      91.67% {
+        box-shadow: red -1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+      }
+
+      100% {
+        box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+      }
+    }
+
+    .header h1 {
+      font-size: 100px;
+      text-decoration: underline #fbe44a;
+      color: #fff;
+      margin-left: 60px;
+      margin-top: -20px;
+    }
+
+    .container {
+      padding: 60px;
+      padding-top: 0px;
+      margin-top: -30px;
+    }
+
+    .grid-each {
+      display: flex;
+    }
+
+    .info-area {
+      margin-top: 120px;
+      margin-left: 30px;
+    }
+
+    .info-area ul li {
+      padding: 20px 0px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .widget-frame-1 h2 {
+      font-size: 50px;
+      color: #fff;
+    }
+
+    iframe {
+      width: 414px;
+      height: 814px;
+      border: none;
+    }
+
+    /* Page content END */
+
+    @media (min-width: 480px) {
+      .nav-list {
+        display: block;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+
       .header h1 {
         font-size: 100px;
         margin-left: 0px;
@@ -366,170 +381,228 @@ width: 100%;
         list-style: none;
       }
 
-        .nav-right {
-          position: absolute;
-        }
-
-        .hidden-xs {
-          display: block;
-        }
-
-        .visible-xs {
-          display: none;
-        }
+      .nav-right {
+        position: absolute;
       }
-       @media (max-width: 600px) {
-          .header h1 {
+
+      .hidden-xs {
+        display: block;
+      }
+
+      .visible-xs {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
         font-size: 60px;
         text-align: left;
         margin-left: 10px;
       }
-        .widget-frame-1 h2 {
+
+      .widget-frame-1 h2 {
         font-size: 30px;
         text-align: center;
       }
-       }
-        @media (max-width: 480px) {
-        .sidebar-item{
+    }
+
+    @media (max-width: 480px) {
+      .sidebar-item {
         font-size: 10px;
-      } 
+      }
+
       .sidebar {
         width: 200px
       }
-        .move-to-left {
+
+      .move-to-left {
         -webkit-transform: translateX(-200px);
         -moz-transform: translateX(-200px);
         -ms-transform: translateX(-200px);
         -o-transform: translateX(-200px);
         transform: translateX(-200px);
       }
-      }
+    }
 
-      @media (max-width: 420px) { 
-          .header h1 {
+    @media (max-width: 420px) {
+      .header h1 {
         font-size: 51px
       }
-        iframe {
+
+      iframe {
         width: 300px;
       }
-        
+
       .container {
         margin-top: 100px;
       }
-          }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <div id="loading-screen">
-      <div class="loader-wrapper" id="loader-6">
-        <div id="loader"></div>
+<body>
+  <div id="loading-screen">
+    <div class="loader-wrapper" id="loader-6">
+      <div id="loader"></div>
+    </div>
+  </div>
+  <div id="body-wrapper">
+    <div class="nav-right visible-xs">
+      <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
       </div>
     </div>
-    <div id="body-wrapper">
-      <div class="nav-right visible-xs">
-        <div class="button" id="btn">
-          <div class="bar top"></div>
-          <div class="bar middle"></div>
-          <div class="bar bottom"></div>
+    <!-- nav-right -->
+    <main>
+      <nav>
+        <div class="nav-right hidden-xs">
+          <div class="button" id="btn">
+            <div class="bar top"></div>
+            <div class="bar middle"></div>
+            <div class="bar bottom"></div>
+          </div>
+        </div>
+        <!-- nav-right -->
+      </nav>
+      <div class="header">
+        <h1 class="a">Widgets.</h1>
+      </div>
+      <div class="container">
+        <div class="grid">
+          <div class="grid-each">
+            <div class="widget-frame-1">
+              <h2>.Basic Scoreboard</h2>
+              <iframe style="visibility: hidden" onload="this.style.visibility='visible';"
+                src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+            </div>
+            <div class="info-area">
+              <ul>
+                <li>Basic team scoring, overs and wickets.</li>
+                <li>Powerbar indicating win probability.</li>
+                <li>Game by play commentary.</li>
+                <li>Basic Batting and bowling data.</li>
+                <li>Team lineup date.</li>
+                <li>Use on any match.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- nav-right -->
-      <main>
-        <nav>
-          <div class="nav-right hidden-xs">
-            <div class="button" id="btn">
-              <div class="bar top"></div>
-              <div class="bar middle"></div>
-              <div class="bar bottom"></div>
-            </div>
-          </div>
-          <!-- nav-right -->
-        </nav>
-        <div class="header">
-          <h1 class="a">Widgets.</h1>
-        </div>
-        <div class="container">
-          <div class="grid">
-            <div class="grid-each">
-              <div class="widget-frame-1">
-                <h2>.Basic Scoreboard</h2>
-                <iframe style="visibility: hidden" onload="this.style.visibility='visible';" src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
-              </div>
-              <div class="info-area">
-                <ul>
-                  <li>Basic team scoring, overs and wickets.</li>
-                  <li>Powerbar indicating win probability.</li>
-                  <li>Game by play commentary.</li>
-                  <li>Basic Batting and bowling data.</li>
-                  <li>Team lineup date.</li>
-                  <li>Use on any match.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer>
-          <p> Trident House<br />42-48 Victoria Street<br />St Albans<br />AL1 3HZ<br />Company No:10915739 </p>
-        </footer>
-      </main>
-
-      <div class="sidebar">
-        <ul class="sidebar-list">
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">All Widgets</a>
+      <div class="sidebar-fixtures">
+        <ul class="sidebar-list-fixtures">
+          <li class="sidebar-item-fixtures-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures"></a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">Basic Scoreboard</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">Basic Scoreboard</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">Intermediate Scoreboard</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">Intermediate Scoreboard</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">Pre Match Report</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">Pre Match Report</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">Basic Tournament Display</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">Basic Tournament Display</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">Intermediate Tournament Display</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">Intermediate Tournament Display</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">Advanced Tournament Display</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">Advanced Tournament Display</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">TAS Batting Profile</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">TAS Batting Profile</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">TAS AVRatings</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">TAS AVRatings</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">Advanced Scoreboard</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">Advanced Scoreboard</a>
           </li>
-          <li class="sidebar-item">
-            <a href="#" class="sidebar-anchor">Web App Example</a>
+          <li class="sidebar-item-fixtures">
+            <a href="#" class="sidebar-anchor-fixtures">Web App Example</a>
           </li>
         </ul>
       </div>
+      <footer>
+        <p> Trident House<br />42-48 Victoria Street<br />St Albans<br />AL1 3HZ<br />Company No:10915739 </p>
+      </footer>
+    </main>
+
+    <div class="sidebar">
+      <ul class="sidebar-list">
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">All Widgets</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">Basic Scoreboard</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">Intermediate Scoreboard</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">Pre Match Report</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">Basic Tournament Display</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">Intermediate Tournament Display</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">Advanced Tournament Display</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">TAS Batting Profile</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">TAS AVRatings</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">Advanced Scoreboard</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-anchor">Web App Example</a>
+        </li>
+      </ul>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      window.addEventListener("load", function () {
-        var e = document.getElementById("loading-screen"),
-          t = document.getElementById("body-wrapper");
-        (e.style.display = "none"), (t.style.display = "block");
-      }),
-        $(document).ready(function () {
-          function e() {
-            $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
-          }
-          $(".button").on("click tap", function () {
-            e();
-          }),
-            $(document).keyup(function (t) {
-              27 === t.keyCode && e();
-            });
-        });
-    </script>
-  </body>
+  </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      var e = document.getElementById("loading-screen"),
+        t = document.getElementById("body-wrapper");
+      (e.style.display = "none"), (t.style.display = "block");
+    }),
+      $(document).ready(function () {
+        function e() {
+          $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
+        }
+        $(".button").on("click tap", function () {
+          e();
+        }),
+          $(document).keyup(function (t) {
+            27 === t.keyCode && e();
+          });
+      });
+
+
+    const api_url = 'http://feed.decimalcricket.com/api/match/list';
+
+
+    const response = fetch(api_url);
+    const data = response.json();
+    const { matches } = data;
+                //   const velMph = velocity * 0.62137119223733;
+                // const altMph = altitude * 0.62137119223733;
+
+
+  </script>
+</body>
+
 </html>
