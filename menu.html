@@ -689,15 +689,19 @@
         "x-api-key": "decimaltest",
         "Content-Type": "application/json",
       },
-    });
+    })
 
-    var log = fixturesApi.then(response => response.json())
-    var nextData = log.then(data => console.log(data.matches));
-    console.log();
+    fixturesApi.then(response => {
+      return response.json();
+    }).then(users => { console.log(users) });
+
+
+
     var els = document.getElementsByClassName("sidebar-anchor-fixtures");
     for (var i = 0; i < els.length; i++) {
       els[1].innerHTML = "Hello";
     }
+
 
   </script>
 </body>
