@@ -682,6 +682,7 @@
           });
       });
 
+
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", {
       method: "GET",
       headers: {
@@ -689,7 +690,12 @@
         "Content-Type": "application/json",
       },
     });
-  </script>
+
+    var sortArray = fixturesApi.then(response => response.json()).then(data => console.log(data));
+
+    console.log(sortArray.matches[2]);
+
+  </script>z
 </body>
 
 </html>
