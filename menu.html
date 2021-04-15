@@ -693,6 +693,12 @@
 
     var log = fixturesApi.then(response => response.json())
     var nextData = log.then(data => console.log(data.matches));
+    console.log();
+    var els = document.getElementsByClassName("sidebar-anchor-fixtures");
+    for (var i = 0; i < els.length; i++) {
+      els[1].innerHTML = "Hello";
+    }
+
   </script>
 </body>
 
