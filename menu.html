@@ -695,13 +695,13 @@
       .then(json => {
         var r = json.matches, s = document.getElementsByClassName("sidebar-anchor-fixtures");
         for (var i = 0; i < s.length; i++) {
-          s[1].innerHTML = r[0].name, s[2].innerHTML = r[1].name,
-            s[3].innerHTML = r[2].name, s[4].innerHTML = r[3].name, s[5].innerHTML = r[4].name,
-            s[6].innerHTML = r[5].name, s[7].innerHTML = r[6].name, s[8].innerHTML = r[7].name,
-            s[9].innerHTML = r[8].name, s[10].innerHTML = r[9].name, s[11].innerHTML = r[10].name,
-            s[12].innerHTML = r[11].name, s[13].innerHTML = r[12].name, s[14].innerHTML = r[13].name,
-            s[15].innerHTML = r[14].name, s[16].innerHTML = r[15].name, s[17].innerHTML = r[16].name,
-            s[18].innerHTML = r[17].name, s[19].innerHTML = r[18].name, s[20].innerHTML = r[19].name;
+          s[1].innerHTML = r[0].name.split("v").join("<br />"), s[2].innerHTML = r[1].name.split("v").join("<br />"),
+            s[3].innerHTML = r[2].name.split("v").join("<br />"), s[4].innerHTML = r[3].name.split("v").join("<br />"), s[5].innerHTML = r[4].name.split("v").join("<br />"),
+            s[6].innerHTML = r[5].name.split("v").join("<br />"), s[7].innerHTML = r[6].name.split("v").join("<br />"), s[8].innerHTML = r[7].name.split("v").join("<br />"),
+            s[9].innerHTML = r[8].name.split("v").join("<br />"), s[10].innerHTML = r[9].name.split("v").join("<br />"), s[11].innerHTML = r[10].name.split("v").join("<br />"),
+            s[12].innerHTML = r[11].name.split("v").join("<br />"), s[13].innerHTML = r[12].name.split("v").join("<br />"), s[14].innerHTML = r[13].name.split("v").join("<br />"),
+            s[15].innerHTML = r[14].name.split("v").join("<br />"), s[16].innerHTML = r[15].name.split("v").join("<br />"), s[17].innerHTML = r[16].name.split("v").join("<br />"),
+            s[18].innerHTML = r[17].name.split("v").join("<br />"), s[19].innerHTML = r[18].name.split("v").join("<br />"), s[20].innerHTML = r[19].name.split("v").join("<br />");
         } console.log(r);
       });
 
