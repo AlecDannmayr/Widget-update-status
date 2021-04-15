@@ -557,7 +557,7 @@
               </a>
             </li>
             <li class="sidebar-item-fixtures">
-              <a href="#" class="sidebar-anchor-fixtures">South Africa <br> Pakistan</a>
+              <a href="#" id="sidebar-anchor-fixtures">South Africa <br> Pakistan</a>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures">KKR Legends <br> KXI Legends</a>
@@ -691,10 +691,13 @@
       },
     })
 
-    fixturesApi.then(response => {
-      return response.json();
-    }).then(users => { console.log(users) });
 
+    fixturesApi.then(response => response.json())
+      .then(json => {
+        var radr = json;
+        console.log(radr);
+        document.getElementById('sidebar-anchor-fixtures').innerHTML = radr.matches[1].name;
+      });
 
 
     var els = document.getElementsByClassName("sidebar-anchor-fixtures");
