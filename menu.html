@@ -212,13 +212,11 @@
       font-size: 11px;
       display: grid;
       grid-template-columns: 50% 50%;
-      ;
     }
 
     .sidebar-item-fixtures p {
       font-size: 11px;
       color: #fff;
-      border: 2px yellow solid;
       margin-top: 0px;
     }
 
@@ -568,64 +566,83 @@
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
-              <p>Date and Time</p>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
             <li class="sidebar-item-fixtures">
               <a href="#" class="sidebar-anchor-fixtures"></a>
+              <p class="fixture-data-time">Date and Time</p>
             </li>
           </ul>
         </div>
@@ -704,7 +721,7 @@
 
     fixturesApi.then(response => response.json())
       .then(json => {
-        var r = json.matches, s = document.getElementsByClassName("sidebar-anchor-fixtures");
+        var r = json.matches, s = document.getElementsByClassName("sidebar-anchor-fixtures"), p = json.matches, n = document.getElementsByClassName("sidebar-anchor-fixtures");
         for (var i = 0; i < s.length; i++) {
           s[1].innerHTML = r[0].name.split("v").join("<br />").split(',')[0].split(',')[0], s[2].innerHTML = r[1].name.split("v").join("<br />").split(',')[0].split(',')[0],
             s[3].innerHTML = r[2].name.split("v").join("<br />").split(',')[0], s[4].innerHTML = r[3].name.split("v").join("<br />").split(',')[0], s[5].innerHTML = r[4].name.split("v").join("<br />").split(',')[0],
