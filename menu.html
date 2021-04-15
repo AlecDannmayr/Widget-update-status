@@ -695,15 +695,16 @@
     fixturesApi.then(response => response.json())
       .then(json => {
         var radr = json;
-        console.log(radr);
+        var els = document.getElementsByClassName("sidebar-anchor-fixtures");
+        for (var i = 0; i < els.length; i++) {
+          els[1].innerHTML = "Hello";
+        }
         document.getElementById('sidebar-anchor-fixtures').innerHTML = radr.matches[1].name;
+        console.log(radr);
       });
 
 
-    var els = document.getElementsByClassName("sidebar-anchor-fixtures");
-    for (var i = 0; i < els.length; i++) {
-      els[1].innerHTML = "Hello";
-    }
+
 
 
   </script>
