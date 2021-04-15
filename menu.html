@@ -691,11 +691,9 @@
       },
     });
 
-    var sortArray = fixturesApi.then(response => response.json()).then(data => console.log(data));
-
-    console.log(sortArray.matches[2]);
-
-  </script>z
+    var log = fixturesApi.then(response => response.json())
+    var nextData = log.then(data => console.log(data.matches));
+  </script>
 </body>
 
 </html>
