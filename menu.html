@@ -26,9 +26,10 @@
 
     #body-wrapper {
       display: none;
-      height: 150%;
+      height: 100%;
       width: 100%;
       overflow-y: hidden;
+      position: relative;
     }
 
     #loading-screen {
@@ -64,7 +65,7 @@
     main {
       z-index: 2;
       position: relative;
-      height: 200%;
+      height: 100%;
       background-color: #162738;
       -webkit-transition: transform 0.7s ease-in-out;
       -moz-transition: transform 0.7s ease-in-out;
@@ -368,6 +369,11 @@
       padding: 0px;
       padding-top: 0px;
       margin-top: 30px;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
 
     .grid-each {
@@ -375,7 +381,7 @@
     }
 
     .info-area {
-      margin-top: 85px;
+      margin-top: 55px;
       margin-left: 100px;
     }
 
