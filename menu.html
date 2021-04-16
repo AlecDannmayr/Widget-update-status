@@ -217,6 +217,14 @@
       font-size: 12px;
     }
 
+    .sidebar-item-fixtures-fixtures {
+      background-color: #fbe44a;
+    }
+
+    .sidebar-item-fixtures-fixtures h3 {
+      color: #132638
+    }
+
     .sidebar-item-fixtures {
       margin: 0px 0;
       font-size: 11px;
@@ -224,10 +232,14 @@
       grid-template-columns: 50% 50%;
     }
 
-    .sidebar-list-fixtures li:nth-child(2n):hover,
-    .sidebar-list-fixtures li:nth-child(1n):hover {
+    .sidebar-list-fixtures li:nth-child(2n):hover:not(:first-child),
+    .sidebar-list-fixtures li:nth-child(1n):hover:not(:first-child) {
       background-color: rgba(251, 228, 74, 0.3);
       color: #15232E;
+    }
+
+    .sidebar-item-fixtures-fixtures:hover {
+      background-color: none;
     }
 
     .sidebar-item-fixtures p {
@@ -646,8 +658,7 @@
                 <div class="grid-each">
                   <div class="widget-frame-1">
                     <h2>Basic Scoreboard</h2><iframe style="visibility: hidden"
-                      onload="this.style.visibility='visible';"
-                      src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                      onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -670,8 +681,7 @@
                 <div class="grid-each">
                   <div class="widget-frame-1">
                     <h2>Intermediate Scoreboard</h2><iframe style="visibility: hidden"
-                      onload="this.style.visibility='visible';"
-                      src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                      onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -694,8 +704,7 @@
                 <div class="grid-each">
                   <div class="widget-frame-1">
                     <h2>Pre Match Report</h2><iframe style="visibility: hidden"
-                      onload="this.style.visibility='visible';"
-                      src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                      onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
