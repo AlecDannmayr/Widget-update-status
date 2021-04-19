@@ -591,21 +591,25 @@
       .carousel-wrapper {
         max-width: 600px;
       }
-
-
     }
 
     @media (max-width: 655px) {
       .carousel-wrapper {
-        max-width: 500px;
+        width: 500px;
       }
 
       .arrow-prev {
-        left: -4vw;
+        left: 10vw;
       }
 
       .arrow-next {
-        right: -4vw;
+        right: 10vw;
+      }
+
+      .arrow {
+        border-width: 0 6px 6px 0;
+        padding: 16px;
+        margin-top: -290px;
       }
     }
 
@@ -619,9 +623,29 @@
       .button {
         margin-top: 25px;
       }
+
+      .carousel-wrapper {
+        margin-top: 100px;
+      }
+
+      .arrow-prev {
+        left: 30vw;
+      }
+
+      .arrow-next {
+        right: 30vw;
+      }
+
+      .carousel-wrapper {
+        width: 400px;
+      }
     }
 
     @media (max-width: 480px) {
+      .carousel-wrapper {
+        width: 300px;
+      }
+
       .sidebar-item {
         font-size: 10px;
         padding-right: 10px;
