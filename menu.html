@@ -268,7 +268,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      background-color: #fff;
+      background-color: #FF9933;
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition: all 0.2s ease-in-out;
       -ms-transition: all 0.2s ease-in-out;
@@ -1136,16 +1136,16 @@
       <div class="border-bar"></div>
       <ul class="sidebar-list">
         <li class="sidebar-item"><a href="#" class="sidebar-anchor">All Widgets</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Scoreboard</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Scoreboard</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Pre Match Report</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Tournament Display</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Tournament Display</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Tournament Display</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS Batting Profile</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS AVRatings</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Scoreboard</a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Web App Example</a></li>
+        <li class="sidebar-item"><a href="#item-1" class="sidebar-anchor">Basic Scoreboard</a></li>
+        <li class="sidebar-item"><a href="#item-2" class="sidebar-anchor">Intermediate Scoreboard</a></li>
+        <li class="sidebar-item"><a href="#item-3" class="sidebar-anchor">Pre Match Report</a></li>
+        <li class="sidebar-item"><a href="#item-4" class="sidebar-anchor">Basic Tournament Display</a></li>
+        <li class="sidebar-item"><a href="#item-5" class="sidebar-anchor">Intermediate Tournament Display</a></li>
+        <li class="sidebar-item"><a href="#item-6" class="sidebar-anchor">Advanced Tournament Display</a></li>
+        <li class="sidebar-item"><a href="#item-7" class="sidebar-anchor">TAS Batting Profile</a></li>
+        <li class="sidebar-item"><a href="#item-8" class="sidebar-anchor">TAS AVRatings</a></li>
+        <li class="sidebar-item"><a href="#item-9" class="sidebar-anchor">Advanced Scoreboard</a></li>
+        <li class="sidebar-item"><a href="#item-10" class="sidebar-anchor">Web App Example</a></li>
         <p class="msg"></p>
       </ul>
     </div>
@@ -1170,16 +1170,6 @@
     });
 
     var getCaouselID = document.querySelectorAll("#item-1, #item-2, #item-3, #item-4, #item-5, #item-6, #item-7, #item-8, #item-9, #item-10, #item-11");
-
-
-    let btns = document.querySelectorAll('carousel-item');
-
-    for (i of btns) {
-      i.addEventListener('click', function () {
-        document.querySelector('.msg').innerHTML = this.innerHTML;
-      });
-    }
-
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
     fixturesApi
