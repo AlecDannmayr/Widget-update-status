@@ -9,9 +9,6 @@
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-    a:active {
-      text-decoration: underline;
-    }
 
 
     body,
@@ -1173,8 +1170,6 @@
         t = document.getElementById("body-wrapper");
       (e.style.display = "none"), (t.style.display = "block");
     });
-
-    var getCaouselID = document.querySelectorAll("#item-1, #item-2, #item-3, #item-4, #item-5, #item-6, #item-7, #item-8, #item-9, #item-10, #item-11");
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
     fixturesApi
