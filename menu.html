@@ -1176,8 +1176,6 @@
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
-
-
     fixturesApi
       .then((response) => response.json())
       .then((json) => {
@@ -1227,13 +1225,20 @@
         (n[18].innerHTML = p[18].start.split("T")[0]), (q[18].innerHTML = p[18].start.split("T")[1].substring(0, 5));
         (n[19].innerHTML = p[19].start.split("T")[0]), (q[19].innerHTML = p[0].start.split("T")[1].substring(0, 5));
 
+        for (z = 0; z < p.length; z++) {
+          console.log(p[z]);
 
+          if (p[z].id === "1000001260LIVE1001")
+            return p.id;
+        }
 
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
           var idNo = event.target.getAttribute("data");
+          console.log(idNo);
         }, false);
+
       });
   </script>
 </body>
