@@ -1185,10 +1185,11 @@
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
-for (q = 0; q < r.length; q++) {
-var eachClass = s[q];
-var eachId = p[q];
+for (e = 0; e < s.length; e++) {
+var eachClass = s[e];
+var eachId = p[e];
 
+s[e].innerHTML = p[e].name.split("v").join("<br />").split(",");
 
 }
 /*
