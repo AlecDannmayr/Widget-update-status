@@ -1010,7 +1010,7 @@
         </div>
         <div class="sidebar-fixtures">
           <ul class="sidebar-list-fixtures">
-            <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures">
+            <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidbar-anchor-fixtures">
                 <h3>Fixtures</h3>
               </a></li>
             <li class="sidebar-item-fixtures"><a href="#" data=0 class="sidebar-anchor-fixtures"></a>
@@ -1157,7 +1157,9 @@
   </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>$(document).ready(function () {
+  <script>
+
+  $(document).ready(function () {
       function e() {
         $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
       }
@@ -1168,6 +1170,7 @@
           27 === t.keyCode && e();
         });
     });
+
     window.addEventListener("load", function () {
       var e = document.getElementById("loading-screen"),
         t = document.getElementById("body-wrapper");
@@ -1188,10 +1191,9 @@
 for (e = 0; e < s.length; e++) {
 var eachClass = s[e];
 var eachId = p[e];
-
-s[e].innerHTML = p[e].name.split("v").join("<br />").split(",");
-
+s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
 }
+
 /*
         (s[1].innerHTML = r[0].name.split("v").join("<br />").split(",")[0].split(",")[0]),
           (s[2].innerHTML = r[1].name.split("v").join("<br />").split(",")[0].split(",")[0]),
