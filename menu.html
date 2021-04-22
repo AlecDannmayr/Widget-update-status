@@ -1019,7 +1019,7 @@
                 <p class="fixture-time"></p>
               </div>
             </li>
-            <li class="sidebar-item-fixtures"><a href="#" data=class="sidebar-anchor-fixtures"></a>
+            <li class="sidebar-item-fixtures"><a href="#" data=1 class="sidebar-anchor-fixtures"></a>
               <div class="date-time">
                 <p class="fixture-data"></p>
                 <p class="fixture-time"></p>
@@ -1176,23 +1176,11 @@
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
-    document.addEventListener('click', function (event) {
-      if (!event.target.matches('.sidebar-anchor-fixtures')) return;
-      event.preventDefault();
-      var idNo = event.target.getAttribute("data");
-    }, false);
+
 
     fixturesApi
       .then((response) => response.json())
       .then((json) => {
-
-        var ide = json.matches;
-
-        console.log(ide);
-
-
-
-
         var r = json.matches,
           s = document.getElementsByClassName("sidebar-anchor-fixtures"),
           p = json.matches,
@@ -1238,6 +1226,14 @@
         (n[17].innerHTML = p[17].start.split("T")[0]), (q[17].innerHTML = p[17].start.split("T")[1].substring(0, 5));
         (n[18].innerHTML = p[18].start.split("T")[0]), (q[18].innerHTML = p[18].start.split("T")[1].substring(0, 5));
         (n[19].innerHTML = p[19].start.split("T")[0]), (q[19].innerHTML = p[0].start.split("T")[1].substring(0, 5));
+
+
+
+        document.addEventListener('click', function (event) {
+          if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+          event.preventDefault();
+          var idNo = event.target.getAttribute("data");
+        }, false);
       });
   </script>
 </body>
