@@ -10,7 +10,6 @@
     @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 
-
     body,
     html {
       height: 100%;
@@ -1175,15 +1174,14 @@
       (e.style.display = "none"), (t.style.display = "block");
     });
 
-    $(document).ready(function (e) { $("#basic-url").focus(); $("#basic-url").on("change", (e) => { let _val = parseInt($(e.currentTarget).val()); if (_val > 0) { $("#testContainer").attr("src", `https://www.quantumcricketleague.com/widget/match/${_val}QUANTUM1001/public`); } }); });
-
 
     document.addEventListener('click', function (event) {
       if (!event.target.matches('.sidebar-anchor-fixtures')) return;
       event.preventDefault();
-      console.log(event.target.getAttribute("data"));
+      var idNo = event.target.getAttribute("data");
     }, false);
 
+    // $(document).ready(function (e) { $("#basic-url").focus(); $("#basic-url").on("change", (e) => { let _val = parseInt($(e.currentTarget).val()); if (_val > 0) { $("#testContainer").attr("src", `https://www.quantumcricketleague.com/widget/match/${_val}QUANTUM1001/public`); } }); });
 
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
