@@ -1014,7 +1014,7 @@
             <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures">
                 <h3>Fixtures</h3>
               </a></li>
-            <li class="sidebar-item-fixtures"><a href="#" data=1 class="sidebar-anchor-fixtures"></a>
+            <li class="sidebar-item-fixtures"><a href="#" class="sidebar-anchor-fixtures"></a>
               <div class="date-time">
                 <p class="fixture-data"></p>
                 <p class="fixture-time"></p>
@@ -1181,7 +1181,7 @@
     document.addEventListener('click', function (event) {
       if (!event.target.matches('.sidebar-anchor-fixtures')) return;
       event.preventDefault();
-      console.log(event.target.data);
+      console.log(event.target.getAttribute("data"));
     }, false);
 
 
