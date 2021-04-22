@@ -436,7 +436,6 @@
       border-width: 0 4px 4px 0;
       display: inline-block;
       padding: 16px;
-      pointer-events: none
     }
 
     .arrow-prev {
@@ -1175,6 +1174,8 @@
         t = document.getElementById("body-wrapper");
       (e.style.display = "none"), (t.style.display = "block");
     });
+
+    $(document).ready(function (e) { $("#basic-url").focus(); $("#basic-url").on("change", (e) => { let _val = parseInt($(e.currentTarget).val()); if (_val > 0) { $("#testContainer").attr("src", `https://www.quantumcricketleague.com/widget/match/${_val}QUANTUM1001/public`); } }); });
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
     fixturesApi
