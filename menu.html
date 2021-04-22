@@ -1010,7 +1010,7 @@
         </div>
         <div class="sidebar-fixtures">
           <ul class="sidebar-list-fixtures">
-            <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidbar-anchor-fixtures">
+            <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures">
                 <h3>Fixtures</h3>
               </a></li>
             <li class="sidebar-item-fixtures"><a href="#" data=0 class="sidebar-anchor-fixtures"></a>
@@ -1158,7 +1158,7 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-
+    
   $(document).ready(function () {
       function e() {
         $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
@@ -1169,7 +1169,7 @@
         $(document).keyup(function (t) {
           27 === t.keyCode && e();
         });
-    });
+ 
 
     window.addEventListener("load", function () {
       var e = document.getElementById("loading-screen"),
@@ -1188,54 +1188,13 @@
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
-for (e = 0; e < s.length; e++) {
+for (e = 1; e < s.length; e++) {
 var eachClass = s[e];
 var eachId = p[e];
 s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
+n[e].innerHTML = p[e].start.split("T")[0];
+q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
 }
-
-/*
-        (s[1].innerHTML = r[0].name.split("v").join("<br />").split(",")[0].split(",")[0]),
-          (s[2].innerHTML = r[1].name.split("v").join("<br />").split(",")[0].split(",")[0]),
-          (s[3].innerHTML = r[2].name.split("v").join("<br />").split(",")[0]),
-          (s[4].innerHTML = r[3].name.split("v").join("<br />").split(",")[0]),
-          (s[5].innerHTML = r[4].name.split("v").join("<br />").split(",")[0]),
-          (s[6].innerHTML = r[5].name.split("v").join("<br />").split(",")[0]),
-          (s[7].innerHTML = r[6].name.split("v").join("<br />").split(",")[0]),
-          (s[8].innerHTML = r[7].name.split("v").join("<br />").split(",")[0]),
-          (s[9].innerHTML = r[8].name.split("v").join("<br />").split(",")[0]),
-          (s[10].innerHTML = r[9].name.split("v").join("<br />").split(",")[0]),
-          (s[11].innerHTML = r[10].name.split("v").join("<br />").split(",")[0]),
-          (s[12].innerHTML = r[11].name.split("v").join("<br />").split(",")[0]),
-          (s[13].innerHTML = r[12].name.split("v").join("<br />").split(",")[0]),
-          (s[14].innerHTML = r[13].name.split("v").join("<br />").split(",")[0]),
-          (s[15].innerHTML = r[14].name.split("v").join("<br />").split(",")[0]),
-          (s[16].innerHTML = r[15].name.split("v").join("<br />").split(",")[0]),
-          (s[17].innerHTML = r[16].name.split("v").join("<br />").split(",")[0]),
-          (s[18].innerHTML = r[17].name.split("v").join("<br />").split(",")[0]),
-          (s[19].innerHTML = r[18].name.split("v").join("<br />").split(",")[0]),
-          (s[20].innerHTML = r[19].name.split("v").join("<br />").split(",")[0]);
-        (n[0].innerHTML = p[0].start.split("T")[0]), (q[0].innerHTML = p[0].start.split("T")[1].substring(0, 5));
-        (n[1].innerHTML = p[1].start.split("T")[0]), (q[1].innerHTML = p[1].start.split("T")[1].substring(0, 5));
-        (n[2].innerHTML = p[2].start.split("T")[0]), (q[2].innerHTML = p[2].start.split("T")[1].substring(0, 5));
-        (n[3].innerHTML = p[3].start.split("T")[0]), (q[3].innerHTML = p[3].start.split("T")[1].substring(0, 5));
-        (n[4].innerHTML = p[4].start.split("T")[0]), (q[4].innerHTML = p[4].start.split("T")[1].substring(0, 5));
-        (n[5].innerHTML = p[5].start.split("T")[0]), (q[5].innerHTML = p[5].start.split("T")[1].substring(0, 5));
-        (n[6].innerHTML = p[6].start.split("T")[0]), (q[6].innerHTML = p[6].start.split("T")[1].substring(0, 5));
-        (n[7].innerHTML = p[7].start.split("T")[0]), (q[7].innerHTML = p[7].start.split("T")[1].substring(0, 5));
-        (n[8].innerHTML = p[8].start.split("T")[0]), (q[8].innerHTML = p[8].start.split("T")[1].substring(0, 5));
-        (n[9].innerHTML = p[9].start.split("T")[0]), (q[9].innerHTML = p[9].start.split("T")[1].substring(0, 5));
-        (n[10].innerHTML = p[10].start.split("T")[0]), (q[10].innerHTML = p[10].start.split("T")[1].substring(0, 5));
-        (n[11].innerHTML = p[11].start.split("T")[0]), (q[11].innerHTML = p[11].start.split("T")[1].substring(0, 5));
-        (n[12].innerHTML = p[12].start.split("T")[0]), (q[12].innerHTML = p[12].start.split("T")[1].substring(0, 5));
-        (n[13].innerHTML = p[13].start.split("T")[0]), (q[13].innerHTML = p[13].start.split("T")[1].substring(0, 5));
-        (n[14].innerHTML = p[14].start.split("T")[0]), (q[14].innerHTML = p[14].start.split("T")[1].substring(0, 5));
-        (n[15].innerHTML = p[15].start.split("T")[0]), (q[15].innerHTML = p[15].start.split("T")[1].substring(0, 5));
-        (n[16].innerHTML = p[16].start.split("T")[0]), (q[16].innerHTML = p[16].start.split("T")[1].substring(0, 5));
-        (n[17].innerHTML = p[17].start.split("T")[0]), (q[17].innerHTML = p[17].start.split("T")[1].substring(0, 5));
-        (n[18].innerHTML = p[18].start.split("T")[0]), (q[18].innerHTML = p[18].start.split("T")[1].substring(0, 5));
-        (n[19].innerHTML = p[19].start.split("T")[0]), (q[19].innerHTML = p[0].start.split("T")[1].substring(0, 5));
-*/
 
         // Select fixture and returns id.
         document.addEventListener('click', function (event) {
@@ -1247,7 +1206,7 @@ s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0]
           console.log(x);
         }, false)
       });
-
+  });
   </script>
 </body>
 
