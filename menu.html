@@ -250,7 +250,7 @@
     }
 
     .sidebar-anchor,
-    .sidebar-anchor-fixtures {
+    .sidebar-anchor-fixtures, .sidebar-anchor-fixtures-title {
       color: #fff;
       text-decoration: none;
       font-size: 1.4em;
@@ -259,7 +259,7 @@
       padding-bottom: 7px;
     }
 
-    .sidebar-anchor-fixtures {
+    .sidebar-anchor-fixtures, .sidebar-anchor-fixtures-title {
       font-size: 1em;
       padding-bottom: 0px;
       word-wrap: none;
@@ -1010,7 +1010,7 @@
         </div>
         <div class="sidebar-fixtures">
           <ul class="sidebar-list-fixtures">
-            <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures">
+            <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
                 <h3>Fixtures</h3>
               </a></li>
             <li class="sidebar-item-fixtures"><a href="#" data=0 class="sidebar-anchor-fixtures"></a>
@@ -1158,7 +1158,7 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    
+
   $(document).ready(function () {
       function e() {
         $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
@@ -1169,7 +1169,7 @@
         $(document).keyup(function (t) {
           27 === t.keyCode && e();
         });
- 
+    });
 
     window.addEventListener("load", function () {
       var e = document.getElementById("loading-screen"),
@@ -1188,13 +1188,13 @@
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
-for (e = 1; e < s.length; e++) {
-var eachClass = s[e];
-var eachId = p[e];
-s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
-n[e].innerHTML = p[e].start.split("T")[0];
-q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
-}
+          for (e = 0; e < s.length; e++) {
+          var eachClass = s[e];
+          var eachId = p[e];
+          s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
+          n[e].innerHTML = p[e].start.split("T")[0];
+          q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
+          }
 
         // Select fixture and returns id.
         document.addEventListener('click', function (event) {
@@ -1206,8 +1206,8 @@ q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
           console.log(x);
         }, false)
       });
-  });
-  </script>
-</body>
 
+
+</script>
+</body>
 </html>
