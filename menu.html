@@ -1231,7 +1231,9 @@
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
           var idNo = event.target.getAttribute("data");
-          return event;
+          var v = r[idNo];
+          var x = v.id;
+          console.log(x);
         }, false)
       });
 
