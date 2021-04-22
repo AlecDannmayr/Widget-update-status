@@ -1179,7 +1179,7 @@
     fixturesApi
       .then((response) => response.json())
       .then((json) => {
-        var x = json, r = json.matches,
+        var r = json.matches,
           s = document.getElementsByClassName("sidebar-anchor-fixtures"),
           p = json.matches,
           n = document.getElementsByClassName("fixture-data"),
@@ -1233,16 +1233,12 @@
           var idNo = event.target.getAttribute("data");
           console.log(idNo);
 
-          for (z = 0; z < p.length; z++) {
-            console.log(p[z]);
-
-            if (p[z].id === "1000001260LIVE1001")
-              return p.id;
-          }
+          console.log(r);
 
         }, false);
 
-        console.log(x);
+
+
 
       });
   </script>
