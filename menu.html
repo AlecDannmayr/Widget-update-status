@@ -1226,17 +1226,15 @@
         (n[19].innerHTML = p[19].start.split("T")[0]), (q[19].innerHTML = p[0].start.split("T")[1].substring(0, 5));
 
 
-        var idNo = event.target.getAttribute("data");
-
         // Select fixture and return 
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
-          console.log(r[idNo]);
+          var idNo = event.target.getAttribute("data");
+          return event;
         }, false)
-
-        console.log(idNo)
       });
+
   </script>
 </body>
 
