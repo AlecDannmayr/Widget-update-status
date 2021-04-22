@@ -1013,13 +1013,13 @@
             <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures">
                 <h3>Fixtures</h3>
               </a></li>
-            <li class="sidebar-item-fixtures"><a href="#" data=1 class="sidebar-anchor-fixtures"></a>
+            <li class="sidebar-item-fixtures"><a href="#" data=0 class="sidebar-anchor-fixtures"></a>
               <div class="date-time">
                 <p class="fixture-data"></p>
                 <p class="fixture-time"></p>
               </div>
             </li>
-            <li class="sidebar-item-fixtures"><a href="#" data=2 class="sidebar-anchor-fixtures"></a>
+            <li class="sidebar-item-fixtures"><a href="#" data=class="sidebar-anchor-fixtures"></a>
               <div class="date-time">
                 <p class="fixture-data"></p>
                 <p class="fixture-time"></p>
@@ -1174,6 +1174,7 @@
       (e.style.display = "none"), (t.style.display = "block");
     });
 
+    var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
     document.addEventListener('click', function (event) {
       if (!event.target.matches('.sidebar-anchor-fixtures')) return;
@@ -1181,10 +1182,17 @@
       var idNo = event.target.getAttribute("data");
     }, false);
 
-    var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
     fixturesApi
       .then((response) => response.json())
       .then((json) => {
+
+        var ide = json.matches;
+
+        console.log(ide);
+
+
+
+
         var r = json.matches,
           s = document.getElementsByClassName("sidebar-anchor-fixtures"),
           p = json.matches,
