@@ -1203,13 +1203,14 @@
           var idNo = event.target.getAttribute("data");
           var v = r[idNo];
           var x = v.id;
-          console.log(x);
-              function sendToFrame(event) {
-            var iframe = document.getElementsByClassName("iframe")
-            if (iframe && iframe.contentWindow) {
-              iframe.contentWindow.postMessage(event.target.value, "*")
+
+          var iframe = document.getElementsByClassName("iframe");
+          if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(x.target.value, "http://widget.decimalcricket.com/basicscoreboard/");
+            console.log(x);
             }
-          }
+
+        
 
         }, false)
       });
