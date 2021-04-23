@@ -1006,6 +1006,7 @@
               <a class="arrow arrow-prev" href="#item-10"></a>
               <a class="arrow arrow-next" href="#item-1"></a>
             </div>
+            
           </div>
         </div>
         <div class="sidebar-fixtures">
@@ -1151,13 +1152,14 @@
         <li class="sidebar-item"><a href="#item-8" class="sidebar-anchor">TAS AVRatings</a></li>
         <li class="sidebar-item"><a href="#item-9" class="sidebar-anchor">Advanced Scoreboard</a></li>
         <li class="sidebar-item"><a href="#item-10" class="sidebar-anchor">Web App Example</a></li>
-        <p class="msg"></p>
       </ul>
     </div>
   </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
+
+
 
   $(document).ready(function () {
       function e() {
@@ -1177,6 +1179,25 @@
       (e.style.display = "none"), (t.style.display = "block");
     });
 
+
+       var socket = new WebSocket("ws://feed.decimalcricket.com");
+        socket.onopen = function () {
+            socket.send(
+                `{
+      "msg_type":"feed_subscription",
+      "feed_id":"1000001480LIVE1001",
+      "feed_filter":["event", "powerbar", "scorecard", "scoreboard", "alerts", "batting_analysis", "lineups", "bowling_analysis", "partnerships", "commentary", "match_update", "scoregrid"]
+    }`
+            );
+        };
+        fetch("http://feed.decimalcricket.com/api/match/list", {
+            method: "GET",
+            headers: {
+                "x-api-key": "decimaltest",
+                "Content-Type": "application/json",
+            },
+        });
+        
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
     fixturesApi
