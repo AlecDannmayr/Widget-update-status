@@ -757,7 +757,8 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Scoreboard</h2><iframe class="iFrame" style="visibility: hidden"
+                    <h2>Basic Scoreboard</h2>
+                    <div class="data" id="data"></div><iframe class="iFrame" style="visibility: hidden"
                       onload="this.style.visibility='visible';" src="IntCricketWidget1.0/index.html"></iframe>
                   </div>
                   <div class="info-area">
@@ -1198,9 +1199,17 @@
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
-          var idNo = event.target.getAttribute("data"), v = r[idNo], x = v.id, w = document.getElementsByClassName("iFrame")[0], z = w.contentDocument, y = z.querySelectorAll("div")[1];
+          var idNo = event.target.getAttribute("data"),
+            v = r[idNo],
+            x = v.id;
+          var p = document.getElementById("data").value;
+          p.innerHTML = x;
+          /*
+          w = document.getElementsByClassName("iFrame")[0], 
+          z = w.contentDocument, 
+          y = z.querySelectorAll("div")[1];
           y.innerHTML = x;
-          //          y.style.display = "none";
+          */
         }, false)
       });
 
