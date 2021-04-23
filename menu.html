@@ -755,7 +755,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Scoreboard</h2><iframe id="myIframe" style="visibility: hidden"
+                    <h2>Basic Scoreboard</h2><iframe class="iFrame" style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="IntCricketWidget1.0"></iframe>
                   </div>
@@ -1211,10 +1211,11 @@
           var v = r[idNo];
           var x = v.id;
           console.log(x);
-            const myIframe = document.getElementById("myIframe");
+            const myIframe = document.getElementsByClassName("iFrame")[0];
       //    function changeStuff() {
-            const iframeWindow = myIframe.contentWindow;
+            const iframeWindow = myIframe.contentDocument;
             console.log(iframeWindow);
+            iframeWindow.body.style.backgroundColor = "#000000";
     //      }
         }, false)
       });
