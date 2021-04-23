@@ -1208,9 +1208,9 @@
           var x = v.id;
           var w = document.getElementsByClassName("iFrame")[0];
           var z = w.contentDocument;
-          var y = z.getElementsByClassName("data");
+          var y = z.querySelector("div");
           y.innerHTML = x;
-          y.style.display = "none"
+          y.style.display = "none";
         }, false)
       });
 
