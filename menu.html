@@ -755,7 +755,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Scoreboard</h2><iframe style="visibility: hidden"
+                    <h2>Basic Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -779,7 +779,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Intermediate Scoreboard</h2><iframe style="visibility: hidden"
+                    <h2>Intermediate Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -803,7 +803,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Pre Match Report</h2><iframe style="visibility: hidden"
+                    <h2>Pre Match Report</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -828,7 +828,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Tournament Display</h2><iframe style="visibility: hidden"
+                    <h2>Basic Tournament Display</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -851,7 +851,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Intermediate Tournament Display</h2><iframe style="visibility: hidden"
+                    <h2>Intermediate Tournament Display</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -875,7 +875,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Advanced Tournament Display</h2><iframe style="visibility: hidden"
+                    <h2>Advanced Tournament Display</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -899,7 +899,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS Batting Profile</h2><iframe style="visibility: hidden"
+                    <h2>TAS Batting Profile</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -922,7 +922,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS AVRating</h2><iframe style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>TAS AVRating</h2><iframe class="iframe" style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -944,7 +944,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Advanced Scoreboard</h2><iframe style="visibility: hidden"
+                    <h2>Advanced Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -966,7 +966,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Web Apps</h2><iframe style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>Web Apps</h2><iframe class="iframe" style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -988,7 +988,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS AVRating</h2><iframe style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>TAS AVRating</h2><iframe class="iframe" style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -1159,8 +1159,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
 
-
-
   $(document).ready(function () {
       function e() {
         $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
@@ -1179,25 +1177,6 @@
       (e.style.display = "none"), (t.style.display = "block");
     });
 
-
-       var socket = new WebSocket("ws://feed.decimalcricket.com");
-        socket.onopen = function () {
-            socket.send(
-                `{
-      "msg_type":"feed_subscription",
-      "feed_id":"1000001480LIVE1001",
-      "feed_filter":["event", "powerbar", "scorecard", "scoreboard", "alerts", "batting_analysis", "lineups", "bowling_analysis", "partnerships", "commentary", "match_update", "scoregrid"]
-    }`
-            );
-        };
-        fetch("http://feed.decimalcricket.com/api/match/list", {
-            method: "GET",
-            headers: {
-                "x-api-key": "decimaltest",
-                "Content-Type": "application/json",
-            },
-        });
-        
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
     fixturesApi
@@ -1225,8 +1204,17 @@
           var v = r[idNo];
           var x = v.id;
           console.log(x);
+              function sendToFrame(event) {
+            var iframe = document.getElementsByClassName("iframe")
+            if (iframe && iframe.contentWindow) {
+              iframe.contentWindow.postMessage(event.target.value, "*")
+            }
+          }
+
         }, false)
       });
+
+   
 
 
 </script>
