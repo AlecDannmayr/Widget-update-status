@@ -781,7 +781,7 @@
                   <div class="widget-frame-1">
                     <h2>Intermediate Scoreboard</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';"
-                      src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                      src="IntCricketWidget1.0"></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -805,7 +805,7 @@
                   <div class="widget-frame-1">
                     <h2>Pre Match Report</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';"
-                      src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                      src="IntCricketWidget1.0"></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -1208,8 +1208,7 @@
           var x = v.id;
           var w = document.getElementsByClassName("iFrame")[0];
           var z = w.contentDocument;
-          var m = z.getElementById("data");
-          m.innerHTML = x;
+          z.body.style.backgroundColor = "#000";
         }, false)
       });
 
