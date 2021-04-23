@@ -1158,6 +1158,8 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
+
+
   $(document).ready(function () {
       function e() {
         $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
@@ -1176,6 +1178,7 @@
       (e.style.display = "none"), (t.style.display = "block");
     });
     
+   
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
     fixturesApi
@@ -1205,7 +1208,7 @@
           var x = v.id;
           var w = document.getElementsByClassName("iFrame")[0];
           var z = w.contentDocument;
-          var y = z.querySelector("div")[0];
+          var y = z.getElementsByClassName("data");
           y.innerHTML = x;
           y.style.display = "none"
         }, false)
