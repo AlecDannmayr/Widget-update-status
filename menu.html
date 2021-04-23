@@ -755,7 +755,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Basic Scoreboard</h2><iframe id="my-iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -767,6 +767,7 @@
                       <li>Basic Batting and bowling data.</li>
                       <li>Team lineup date.</li>
                       <li>Use on any match.</li>
+                      <input type="text" id="my-message" placeholder="testing (ignore) ..." onkeyup="sendToFrame(event)" />
                     </ul>
                   </div>
                 </div>
@@ -1177,6 +1178,14 @@
       (e.style.display = "none"), (t.style.display = "block");
     });
 
+       function sendToFrame(event) {
+          var iframe = document.getElementById("my-iframe")
+          if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage(event.target.value, "*")
+          }
+        }
+
+
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
     fixturesApi
@@ -1196,6 +1205,7 @@
           q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
           }
 
+       
         // Select fixture and returns id.
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
@@ -1203,13 +1213,14 @@
           var idNo = event.target.getAttribute("data");
           var v = r[idNo];
           var x = v.id;
-
+/* 
           var iframe = document.getElementsByClassName("iframe");
           if (iframe && iframe.contentWindow) {
           iframe.contentWindow.postMessage(x.target.value, "http://widget.decimalcricket.com/basicscoreboard/");
             console.log(x);
             }
 
+            */ 
         
 
         }, false)
