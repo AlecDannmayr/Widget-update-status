@@ -1213,7 +1213,7 @@
           var v = r[idNo];
           var x = v.id;
           var iframe = document.getElementsByClassName("iframe");
-          iframe.contentWindow.postMessage(x, "http://widget.decimalcricket.com/basicscoreboard/");
+          iframe.contentWindow.postMessage("Hello", "http://widget.decimalcricket.com/basicscoreboard/");
           console.log(x);
         }, false)
       });
