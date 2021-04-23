@@ -755,7 +755,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Basic Scoreboard</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -779,7 +779,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Intermediate Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Intermediate Scoreboard</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -803,7 +803,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Pre Match Report</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Pre Match Report</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -828,7 +828,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Tournament Display</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Basic Tournament Display</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -851,7 +851,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Intermediate Tournament Display</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Intermediate Tournament Display</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -875,7 +875,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Advanced Tournament Display</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Advanced Tournament Display</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -899,7 +899,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS Batting Profile</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>TAS Batting Profile</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -922,7 +922,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS AVRating</h2><iframe class="iframe" style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>TAS AVRating</h2><iframe  style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -944,7 +944,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Advanced Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Advanced Scoreboard</h2><iframe  style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -966,7 +966,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Web Apps</h2><iframe class="iframe" style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>Web Apps</h2><iframe  style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -988,7 +988,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS AVRating</h2><iframe class="iframe" style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>TAS AVRating</h2><iframe  style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -1184,6 +1184,9 @@
           }
         }
 
+          var y = document.getElementsByTagName("iframe")[0].contentWindow;
+            y.document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
+
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
@@ -1212,9 +1215,6 @@
           var idNo = event.target.getAttribute("data");
           var v = r[idNo];
           var x = v.id;
-          var iframe = document.getElementsByClassName("iframe");
-          iframe.contentWindow.postMessage("Hello", "http://widget.decimalcricket.com/basicscoreboard/");
-          console.log(x);
         }, false)
       });
 
