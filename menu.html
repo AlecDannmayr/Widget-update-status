@@ -1159,6 +1159,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
 
+  var w = document.getElementById("slide-container");
+  console.log(w.textContent);
+
   $(document).ready(function () {
       function e() {
         $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
@@ -1205,10 +1208,6 @@
           var idNo = event.target.getAttribute("data");
           var v = r[idNo];
           var x = v.id;
-          var y = document.getElementsByClassName("iframe").contentWindow;
-         var w = document.getElementById("wrapper");
-
-         y = w.style.backgroundColor = "blue";
         }, false)
       });
 
