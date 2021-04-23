@@ -755,7 +755,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Scoreboard</h2><iframe  style="visibility: hidden"
+                    <h2>Basic Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -1177,15 +1177,8 @@
       (e.style.display = "none"), (t.style.display = "block");
     });
 
-       function sendToFrame(event) {
-          var iframe = document.getElementById("my-iframe")
-          if (iframe && iframe.contentWindow) {
-            iframe.contentWindow.postMessage(event.target.value, "http://widget.decimalcricket.com/basicscoreboard/")
-          }
-        }
-
-          var y = document.getElementsByTagName("iframe")[0].contentWindow;
-            y.document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
+          var y = document.getElementsByClassName("iframe")[0].contentWindow;
+            y.document.getElementsByClassName("body")[0].style.backgroundColor = "blue";
 
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
@@ -1207,7 +1200,6 @@
           q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
           }
 
-       
         // Select fixture and returns id.
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
