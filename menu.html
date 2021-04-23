@@ -755,13 +755,13 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
+                    <h2>Basic Scoreboard</h2><iframe id="myIframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="IntCricketWidget1.0"></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
-                      <button onlick="changeStuff()"></button>
+                      <button onclick="changeStuff()"></button>
                       <li>Basic team scoring, overs and wickets.</li>
                       <li>Powerbar indicating win probability.</li>
                       <li>Game by play commentary.</li>
@@ -1160,6 +1160,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
 
+
   $(document).ready(function () {
       function e() {
         $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
@@ -1177,7 +1178,8 @@
         t = document.getElementById("body-wrapper");
       (e.style.display = "none"), (t.style.display = "block");
     });
-
+    
+   
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
     fixturesApi
@@ -1199,12 +1201,7 @@
 
         // Select fixture and returns id.
 
-        const iFrame = document.getElementsByClassName("iframe");
-
-        function changeStuff () {
-        const iframeWindow = iFrame.contentWindow;
-        console.log(iframeWindow)
-        }
+     
 
 
         document.addEventListener('click', function (event) {
@@ -1214,6 +1211,11 @@
           var v = r[idNo];
           var x = v.id;
           console.log(x);
+            const myIframe = document.getElementById("myIframe");
+      //    function changeStuff() {
+            const iframeWindow = myIframe.contentWindow;
+            console.log(iframeWindow);
+    //      }
         }, false)
       });
 
