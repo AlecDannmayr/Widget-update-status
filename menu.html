@@ -1181,7 +1181,7 @@
        function sendToFrame(event) {
           var iframe = document.getElementById("my-iframe")
           if (iframe && iframe.contentWindow) {
-            iframe.contentWindow.postMessage(event.target.value, "*")
+            iframe.contentWindow.postMessage(event.target.value, "http://widget.decimalcricket.com/basicscoreboard/")
           }
         }
 
@@ -1213,6 +1213,7 @@
           var idNo = event.target.getAttribute("data");
           var v = r[idNo];
           var x = v.id;
+          console.log(x);
 /* 
           var iframe = document.getElementsByClassName("iframe");
           if (iframe && iframe.contentWindow) {
