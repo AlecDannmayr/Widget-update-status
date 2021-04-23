@@ -761,6 +761,7 @@
                   </div>
                   <div class="info-area">
                     <ul>
+                      <button onlick="changeStuff()"></button>
                       <li>Basic team scoring, overs and wickets.</li>
                       <li>Powerbar indicating win probability.</li>
                       <li>Game by play commentary.</li>
@@ -1197,6 +1198,15 @@
           }
 
         // Select fixture and returns id.
+
+        const iFrame = document.getElementsByClassName("iframe");
+
+        function changeStuff () {
+        const iframeWindow = iFrame.contentWindow;
+        console.log(iframeWindow)
+        }
+
+
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
