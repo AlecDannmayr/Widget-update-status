@@ -1212,16 +1212,9 @@
           var idNo = event.target.getAttribute("data");
           var v = r[idNo];
           var x = v.id;
-          console.log(x);
-
           var iframe = document.getElementsByClassName("iframe");
-          var ii = x;
-          if (iframe && iframe.contentWindow) {
-          iframe.contentWindow.postMessage(ii.target.value, "http://widget.decimalcricket.com/basicscoreboard/");
-          console.log(ii);
-            }
-        
-
+          iframe.contentWindow.postMessage(x, "http://widget.decimalcricket.com/basicscoreboard/");
+          console.log(x);
         }, false)
       });
 
