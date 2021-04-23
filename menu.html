@@ -1208,7 +1208,8 @@
           var x = v.id;
           var w = document.getElementsByClassName("iFrame")[0];
           var z = w.contentDocument;
-          z.body.data.style.display = "block";
+          var m = z.getElementById("data");
+          m.innerHTML = x;
         }, false)
       });
 
