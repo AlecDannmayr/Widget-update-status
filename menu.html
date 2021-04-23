@@ -755,7 +755,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Scoreboard</h2><iframe id="my-iframe" style="visibility: hidden"
+                    <h2>Basic Scoreboard</h2><iframe class="iframe" style="visibility: hidden"
                       onload="this.style.visibility='visible';"
                       src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                   </div>
@@ -767,7 +767,6 @@
                       <li>Basic Batting and bowling data.</li>
                       <li>Team lineup date.</li>
                       <li>Use on any match.</li>
-                      <input type="text" id="my-message" placeholder="testing (ignore) ..." onkeyup="sendToFrame(event)" />
                     </ul>
                   </div>
                 </div>
@@ -1214,14 +1213,13 @@
           var v = r[idNo];
           var x = v.id;
           console.log(x);
-/* 
-          var iframe = document.getElementsByClassName("iframe");
-          if (iframe && iframe.contentWindow) {
-          iframe.contentWindow.postMessage(x.target.value, "http://widget.decimalcricket.com/basicscoreboard/");
-            console.log(x);
-            }
 
-            */ 
+          var iframe = document.getElementsByClassName("iframe");
+          var ii = x;
+          if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(ii.target.value, "http://widget.decimalcricket.com/basicscoreboard/");
+          console.log(ii);
+            }
         
 
         }, false)
