@@ -250,7 +250,8 @@
     }
 
     .sidebar-anchor,
-    .sidebar-anchor-fixtures, .sidebar-anchor-fixtures-title {
+    .sidebar-anchor-fixtures,
+    .sidebar-anchor-fixtures-title {
       color: #fff;
       text-decoration: none;
       font-size: 1.4em;
@@ -259,7 +260,8 @@
       padding-bottom: 7px;
     }
 
-    .sidebar-anchor-fixtures, .sidebar-anchor-fixtures-title {
+    .sidebar-anchor-fixtures,
+    .sidebar-anchor-fixtures-title {
       font-size: 1em;
       padding-bottom: 0px;
       word-wrap: none;
@@ -756,8 +758,7 @@
                 <div class="grid-each">
                   <div class="widget-frame-1">
                     <h2>Basic Scoreboard</h2><iframe class="iFrame" style="visibility: hidden"
-                      onload="this.style.visibility='visible';"
-                      src="IntCricketWidget1.0/index.html"></iframe>
+                      onload="this.style.visibility='visible';" src="IntCricketWidget1.0/index.html"></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -779,9 +780,8 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Intermediate Scoreboard</h2><iframe  style="visibility: hidden"
-                      onload="this.style.visibility='visible';"
-                      src="IntCricketWidget1.0"></iframe>
+                    <h2>Intermediate Scoreboard</h2><iframe style="visibility: hidden"
+                      onload="this.style.visibility='visible';" src="IntCricketWidget1.0"></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -803,9 +803,8 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Pre Match Report</h2><iframe  style="visibility: hidden"
-                      onload="this.style.visibility='visible';"
-                      src="IntCricketWidget1.0"></iframe>
+                    <h2>Pre Match Report</h2><iframe style="visibility: hidden"
+                      onload="this.style.visibility='visible';" src="IntCricketWidget1.0"></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -828,7 +827,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Basic Tournament Display</h2><iframe  style="visibility: hidden"
+                    <h2>Basic Tournament Display</h2><iframe style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -851,7 +850,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Intermediate Tournament Display</h2><iframe  style="visibility: hidden"
+                    <h2>Intermediate Tournament Display</h2><iframe style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -875,7 +874,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Advanced Tournament Display</h2><iframe  style="visibility: hidden"
+                    <h2>Advanced Tournament Display</h2><iframe style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -899,7 +898,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS Batting Profile</h2><iframe  style="visibility: hidden"
+                    <h2>TAS Batting Profile</h2><iframe style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -922,7 +921,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS AVRating</h2><iframe  style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>TAS AVRating</h2><iframe style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -944,7 +943,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Advanced Scoreboard</h2><iframe  style="visibility: hidden"
+                    <h2>Advanced Scoreboard</h2><iframe style="visibility: hidden"
                       onload="this.style.visibility='visible';" src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -966,7 +965,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>Web Apps</h2><iframe  style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>Web Apps</h2><iframe style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -988,7 +987,7 @@
               <div class="grid">
                 <div class="grid-each">
                   <div class="widget-frame-1">
-                    <h2>TAS AVRating</h2><iframe  style="visibility: hidden" onload="this.style.visibility='visible';"
+                    <h2>TAS AVRating</h2><iframe style="visibility: hidden" onload="this.style.visibility='visible';"
                       src=""></iframe>
                   </div>
                   <div class="info-area">
@@ -1006,7 +1005,7 @@
               <a class="arrow arrow-prev" href="#item-10"></a>
               <a class="arrow arrow-next" href="#item-1"></a>
             </div>
-            
+
           </div>
         </div>
         <div class="sidebar-fixtures">
@@ -1159,8 +1158,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
 
-
-  $(document).ready(function () {
+    $(document).ready(function () {
       function e() {
         $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
       }
@@ -1177,8 +1175,7 @@
         t = document.getElementById("body-wrapper");
       (e.style.display = "none"), (t.style.display = "block");
     });
-    
-   
+
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
     fixturesApi
@@ -1190,30 +1187,23 @@
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
-          for (e = 0; e < s.length; e++) {
+        for (e = 0; e < s.length; e++) {
           var eachClass = s[e];
           var eachId = p[e];
           s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
-          n[e].innerHTML = p[e].start.split("T")[0].substring(0,10);
+          n[e].innerHTML = p[e].start.split("T")[0].substring(0, 10);
           q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
-          }
-
-        // Select fixture and returns id.
+        }
 
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
-          var idNo = event.target.getAttribute("data");
-          var v = r[idNo];
-          var x = v.id;
-          var w = document.getElementsByClassName("iFrame")[0];
-          var z = w.contentDocument;
-          var y = z.querySelector("div");
+          var idNo = event.target.getAttribute("data"), v = r[idNo], x = v.id, w = document.getElementsByClassName("iFrame")[0], z = w.contentDocument, y = z.querySelector("div");
           y.innerHTML = x;
           y.style.display = "none";
         }, false)
       });
-
-</script>
+  </script>
 </body>
+
 </html>
