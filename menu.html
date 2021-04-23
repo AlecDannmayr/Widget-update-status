@@ -761,7 +761,6 @@
                   </div>
                   <div class="info-area">
                     <ul>
-                      <button onclick="changeStuff()"></button>
                       <li>Basic team scoring, overs and wickets.</li>
                       <li>Powerbar indicating win probability.</li>
                       <li>Game by play commentary.</li>
@@ -1201,22 +1200,15 @@
 
         // Select fixture and returns id.
 
-     
-
-
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
           var idNo = event.target.getAttribute("data");
           var v = r[idNo];
           var x = v.id;
-          console.log(x);
-            const myIframe = document.getElementsByClassName("iFrame")[0];
-      //    function changeStuff() {
-            const iframeWindow = myIframe.contentDocument;
-            console.log(iframeWindow);
-            iframeWindow.body.style.backgroundColor = "#000000";
-    //      }
+          var w = document.getElementsByClassName("iFrame")[0];
+          var z = w.contentDocument;
+          z.body.style.backgroundColor = "#fff";
         }, false)
       });
 
