@@ -1178,7 +1178,7 @@
     });
 
           var y = document.getElementsByClassName("iframe")[0].contentWindow;
-            y.document.getElementsByClassName("body")[0].style.backgroundColor = "blue";
+            y.document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
 
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
