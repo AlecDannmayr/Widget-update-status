@@ -1184,17 +1184,15 @@
       .then((response) => response.json())
       .then((json) => {
         var r = json.matches,
-          p = json.matches,
           s = document.getElementsByClassName("sidebar-anchor-fixtures"),
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
 
         for (e = 0; e < s.length; e++) {
-          console.log(p[0].name);
-          var et = s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
-          n[e].innerHTML = p[e].start.split("T")[0].substring(0, 10);
-          q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
+          s[1].innerHTML = r[1].name.split("v").join("<br />").split(",")[0].split(",")[0];
+          n[1].innerHTML = r[1].start.split("T")[0].substring(0, 10);
+          q[1].innerHTML = r[1].start.split("T")[1].substring(0, 5);
         }
 
         document.addEventListener('click', function (event) {
