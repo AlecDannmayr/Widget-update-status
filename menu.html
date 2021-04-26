@@ -1189,7 +1189,9 @@
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
-        for (e = 0; e < s.length - 1; e++) {
+
+        for (e = 0; e < s.length; e++) {
+          console.log(p[0].name);
           var et = s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
           n[e].innerHTML = p[e].start.split("T")[0].substring(0, 10);
           q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
@@ -1204,6 +1206,7 @@
             w = document.getElementsByClassName("iFrame")[0];
           w.contentWindow.matchRun(x);
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
+          console.log(x);
         }, false)
       });
 
