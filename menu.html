@@ -1192,7 +1192,6 @@
           var et = s[e].innerHTML = p[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
           n[e].innerHTML = p[e].start.split("T")[0].substring(0, 10);
           q[e].innerHTML = p[e].start.split("T")[1].substring(0, 5);
-          console.log(et);
         }
 
         document.addEventListener('click', function (event) {
@@ -1201,8 +1200,10 @@
           var idNo = event.target.getAttribute("data"),
             v = r[idNo],
             x = v.id,
-            w = document.getElementsByClassName("iFrame")[0];
-          w.matchRun(x);
+            w = document.getElementsByClassName("iFrame")[0],
+            z = w.window.document;
+          console.log(z);
+          z.matchRun(x);
         }, false)
       });
 
