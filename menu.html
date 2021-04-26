@@ -1201,7 +1201,9 @@
           var idNo = event.target.getAttribute("data"),
             v = r[idNo],
             x = v.id,
-            w = document.getElementsByClassName("iFrame")[0].contentWindow.matchRun(x);
+            w = document.getElementsByClassName("iFrame")[0];
+          w.contentWindow.matchRun(x);
+          w.contentWindow.clkupdate();
         }, false)
       });
 
