@@ -758,8 +758,8 @@
                 <div class="grid-each">
                   <div class="widget-frame-1">
                     <h2>Basic Scoreboard</h2>
-                  </div><iframe class="iFrame iframe" style="visibility: hidden"
-                    onload="this.style.visibility='visible';" src="IntCricketWidget1.0"></iframe>
+                  </div><iframe class="iFrame" style="visibility: hidden" onload="this.style.visibility='visible';"
+                    src="IntCricketWidget1.0"></iframe>
                 </div>
                 <div class="info-area">
                   <ul>
@@ -1172,9 +1172,6 @@
         });
     });
 
-    var g = document.getElementsByClassName("iframe");
-    console.log(g);
-
     window.addEventListener("load", function () {
       var e = document.getElementById("loading-screen"),
         t = document.getElementById("body-wrapper");
@@ -1203,8 +1200,10 @@
           event.preventDefault();
           var idNo = event.target.getAttribute("data"),
             v = r[idNo],
-            x = v.id;
-          document.getElementsByClassName("iFrame")[0].contentWindow.matchRun(x);
+            x = v.id,
+            w = document.getElementsByClassName("iFrame")[0];
+          w.contentWindow.matchRun(x);
+          w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
         }, false)
       });
 
