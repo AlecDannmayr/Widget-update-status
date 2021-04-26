@@ -1182,8 +1182,7 @@
     fixturesApi
       .then((response) => response.json())
       .then((json) => {
-        var r = json.matches,
-          p = json.matches,
+        var r = json.matches, p = json.matches,
           s = document.getElementsByClassName("sidebar-anchor-fixtures"),
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
@@ -1199,14 +1198,15 @@
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
-          var idNo = event.target.getAttribute("data"),
-            v = r[idNo],
-            x = v.id;
-          w = document.getElementsByClassName("iFrame")[0],
-            z = w.contentDocument,
-            y = z.querySelectorAll("div")[1];
-          y.innerHTML = x;
+          var idNo = event.target.getAttribute("data");
+          v = r[idNo];
+          x = v.id;
           console.log(x);
+          w = document.getElementsByClassName("iFrame")[0];
+          z = w.contentDocument;
+          y = z.querySelectorAll("div")[1];
+          y.innerHTML = x;
+
         }, false)
       });
 
