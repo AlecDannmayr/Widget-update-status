@@ -1180,9 +1180,10 @@
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
-        for (er = 0; er < r.length; er++) {
-          console.log(r[er].start[er]);
-        }
+
+        var f = r[0].start;
+        var uu = f.getDay();
+        console.log(uu);
 
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
