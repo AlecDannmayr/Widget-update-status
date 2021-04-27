@@ -391,11 +391,6 @@
       display: flex;
     }
 
-    .grid a {
-      pointer-events: none;
-      cursor: not-allowed;
-    }
-
     .info-area {
       margin-top: 55px;
       margin-left: 100px;
@@ -437,11 +432,15 @@
       transition: all 0.4s ease-in-out;
     }
 
+    /* tool tips and arrow disable */
+
     .arrow {
       border: solid #FBE44A;
       border-width: 0 4px 4px 0;
       display: inline-block;
       padding: 16px;
+      pointer-events: none;
+      cursor: not-allowed;
     }
 
     .arrow-prev {
@@ -760,7 +759,6 @@
             <span id="item-11"></span>
             <div class="carousel-item item-1">
               <div class="grid">
-
                 <div class="grid-each">
                   <div class="widget-frame-1">
                     <h2>Basic Scoreboard</h2>
