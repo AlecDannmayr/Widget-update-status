@@ -1193,7 +1193,7 @@
 
         for (e = 0; e < 15; e++) {
           s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
-          n[e].innerHTML = r[e].start.split("T")[0].substring(0, 10);
+          n[e].innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().replace(",", "/");
           q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
         }
 
