@@ -226,6 +226,10 @@
       cursor: not-allowed;
     }
 
+    .sidebar-anchor-active {
+      cursor: pointer;
+    }
+
     .sidebar-item-fixtures-fixtures {
       background-color: #fbe44a;
     }
@@ -771,7 +775,7 @@
                   <div class="widget-frame-1">
                     <h2>Basic Scoreboard</h2>
                     <iframe class="iFrame" style="visibility: hidden" onload="this.style.visibility='visible';"
-                      src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                      src="/basicscoreboard"></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -1129,7 +1133,8 @@
     <div class="sidebar">
       <div class="border-bar"></div>
       <ul class="sidebar-list">
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Scoreboard</a></li>
+        <li class="sidebar-item"><a href="#item-1" class="sidebar-anchor sidebar-anchor-active">Basic Scoreboard</a>
+        </li>
         <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Scoreboard</a></li>
         <li class="sidebar-item"><a href="#" class="sidebar-anchor">Pre Match Report</a></li>
         <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Tournament Display</a></li>
