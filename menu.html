@@ -1197,8 +1197,10 @@
           var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
           q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
           n[e].innerHTML = tt;
-          console.log(tt);
-
+          var yy = tt.substring(0, 2);
+          var yc = yy / 4 % 7; s
+          var ycn = yy + yc;
+          console.log(ycn);
         }
 
       });
