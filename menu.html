@@ -218,10 +218,6 @@
       font-size: 12px;
     }
 
-    .sidebar-anchor:hover {
-      color: #FF9933;
-    }
-
     .sidebar-item-fixtures-fixtures {
       background-color: #fbe44a;
     }
@@ -434,13 +430,17 @@
 
     /* tool tips and arrow disable */
 
+    .carousel-item a {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
     .arrow {
       border: solid #FBE44A;
       border-width: 0 4px 4px 0;
       display: inline-block;
       padding: 16px;
-      pointer-events: none;
-      cursor: not-allowed;
+
     }
 
     .arrow-prev {
@@ -1121,7 +1121,6 @@
     <div class="sidebar">
       <div class="border-bar"></div>
       <ul class="sidebar-list">
-        <li class="sidebar-item"><a href="#" class="sidebar-anchor">All Widgets</a></li>
         <li class="sidebar-item"><a href="#item-1" class="sidebar-anchor">Basic Scoreboard</a></li>
         <li class="sidebar-item"><a href="#item-2" class="sidebar-anchor">Intermediate Scoreboard</a></li>
         <li class="sidebar-item"><a href="#item-3" class="sidebar-anchor">Pre Match Report</a></li>
