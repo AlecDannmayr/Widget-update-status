@@ -1205,12 +1205,16 @@
           var rm = pi + yy;
           var mo = rm % 7;
           // Find month code
-          var mc = tt.substring(3, 5);
+          var mc = "02";
           var ss;
           if (mc.charAt(0) === "0") {
             ss = mc.substring(1, 2)
-            console.log(ss);
+          } else {
+            ss = mc;
           }
+
+          console.log(ss);
+
         }
 
       });
