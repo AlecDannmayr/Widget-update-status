@@ -1197,14 +1197,17 @@
           var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
           q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
           n[e].innerHTML = tt;
-          var yy = tt.substring(8, 10);  //  tt.substring(0, 2)
+          // Find year code 
+          var yy = tt.substring(8, 10);
           var yc = yy / 4;
           var tf = yc.toFixed(0);
           var pi = parseInt(tf);
           var rm = pi + yy;
           var mo = rm % 7;
           console.log(yy);
-
+          // Find month code
+          var mc = tt.substring(3, 5)
+          console.log(mc);
         }
 
       });
