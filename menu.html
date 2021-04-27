@@ -1180,10 +1180,9 @@
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
-
-
-        var nn = n.getDay();
-        console.log(nn);
+        for (er = 0; er < r.length; er++) {
+          console.log(r[er].start[er]);
+        }
 
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
@@ -1200,6 +1199,7 @@
           s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
           n[e].innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
           q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
+
         }
 
       });
