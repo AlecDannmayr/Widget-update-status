@@ -1197,11 +1197,12 @@
           var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
           q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
           n[e].innerHTML = tt;
-          var yy = 97;
-          var yc = 97 / 4;
+          var yy = 97;  //  tt.substring(0, 2)
+          var yc = yy / 4;
           var tf = yc.toFixed(0);
-          var y2 = yy + tf;
-          console.log(y2);
+          console.log(tf);
+          var y2 = tf + yy;
+
         }
 
       });
