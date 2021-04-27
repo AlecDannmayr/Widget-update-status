@@ -1181,10 +1181,6 @@
           q = document.getElementsByClassName("fixture-time");
 
 
-        var f = r[0].start;
-        var uu = f.getDay();
-        console.log(uu);
-
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
@@ -1198,8 +1194,10 @@
 
         for (e = 0; e < 15; e++) {
           s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
-          n[e].innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+          var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
           q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
+          n[e].innerHTML = tt;
+          console.log(tt);
 
         }
 
