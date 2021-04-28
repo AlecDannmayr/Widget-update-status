@@ -1246,11 +1246,12 @@
           event.preventDefault();
           var idNo = event.target.getAttribute("data"),
             v = r[idNo],
+            xx = v.id,
             x = v.id,
             w = document.getElementsByClassName("iFrame")[0];
           w.contentWindow.matchRun(x);
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
-          console.log(idNo);
+          console.log(xx);
         }, false)
 
         for (e = 0; e < s.length; e++) {
