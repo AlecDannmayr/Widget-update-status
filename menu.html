@@ -18,7 +18,7 @@
       font-family: "Roboto", sans-serif;
       width: 100%;
       overflow-x: hidden;
-      background-color: #FF9933;
+      background-color: #162738;
     }
 
     #body-wrapper {
@@ -29,7 +29,7 @@
     }
 
     #loading-screen {
-      background-color: #200429;
+      background-color: #162738;
       height: 100%;
       display: flex;
       justify-content: center;
@@ -1211,18 +1211,6 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-
-    $(document).ready(function () {
-      function e() {
-        $(".button").toggleClass("active"), $("main").toggleClass("move-to-left"), $(".sidebar-item").toggleClass("active");
-      }
-      $(".button").on("click tap", function () {
-        e();
-      }),
-        $(document).keyup(function (t) {
-          27 === t.keyCode && e();
-        });
-    });
 
     window.addEventListener("load", function () {
       var e = document.getElementById("loading-screen"),
