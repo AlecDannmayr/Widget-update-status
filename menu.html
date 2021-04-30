@@ -96,7 +96,7 @@
     }
 
     .sidebar-fixtures::-webkit-scrollbar {
-      width: 1px;
+      width: 0px;
       background-color: #FF9933;
     }
 
@@ -523,6 +523,16 @@
     #item-11:target~.item-11 {
       z-index: 3;
       opacity: 1;
+    }
+
+    @media (max-width: 1553px) {
+      .carousel-wrapper {
+        margin-left: -100px;
+      }
+
+      .info-area {
+        margin-left: 0px;
+      }
     }
 
 
