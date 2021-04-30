@@ -191,18 +191,13 @@
       margin: 0;
       list-style: none;
       position: relative;
-      margin-top: 150px;
+      margin-top: 0px;
       text-align: left;
     }
 
     .sidebar-list {
-      padding-left: 10px;
-    }
-
-    .sidebar-list-fixtures {
-      text-align: left;
-      margin-left: 0px;
-      margin-top: -6px;
+      text-align: right;
+      padding-right: 10px;
     }
 
     .sidebar-item,
@@ -297,7 +292,8 @@
       background-color: #132638;
     }
 
-    .sidebar-list-fixtures li:nth-child(1n) {
+    .sidebar-list-fixtures li:nth-child(1n),
+    .sidebar-item li:nth-child(1n) {
       padding: 9px;
     }
 
@@ -1178,8 +1174,8 @@
           </ul>
         </div>
     </main>
-    <div class="sidebar-fixtures">
-      <ul class="sidebar-list-fixtures">
+    <div class="sidebar">
+      <ul class="sidebar-list">
         <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
             <h3>Fixtures</h3>
           </a></li>
@@ -1194,11 +1190,6 @@
         <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS AVRatings</a></li>
         <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Scoreboard</a></li>
         <li class="sidebar-item"><a href="#" class="sidebar-anchor">Web App Example</a></li>
-      </ul>
-    </div>
-    <div class="sidebar">
-      <ul class="sidebar-list">
-
       </ul>
     </div>
   </div>
