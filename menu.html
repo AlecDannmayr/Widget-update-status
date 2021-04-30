@@ -197,7 +197,6 @@
 
     .sidebar-list {
       text-align: right;
-      padding-right: 10px;
     }
 
     .sidebar-item,
@@ -223,12 +222,22 @@
       cursor: pointer;
     }
 
-    .sidebar-item-fixtures-fixtures {
+    .sidebar-item-fixtures-fixtures,
+    .sidebar-item-widgets {
       background-color: #fbe44a;
     }
 
-    .sidebar-item-fixtures-fixtures h3 {
+    .sidebar-item-fixtures-fixtures h3,
+    .sidebar-item-widgets h3 {
       color: #132638
+    }
+
+    .sidebar-item-widgets h3 {
+      padding-right: 10px;
+    }
+
+    .sidebar-item-widgets {
+      padding: 10px 0px 10px 0px;
     }
 
     .sidebar-item-fixtures {
@@ -248,6 +257,10 @@
       font-size: 11px;
       color: #fff;
       margin-top: 0px;
+    }
+
+    .sidebar-item {
+      padding-right: 10px;
     }
 
     .sidebar-anchor,
@@ -292,8 +305,7 @@
       background-color: #132638;
     }
 
-    .sidebar-list-fixtures li:nth-child(1n),
-    .sidebar-item li:nth-child(1n) {
+    .sidebar-list-fixtures li:nth-child(1n) {
       padding: 9px;
     }
 
@@ -1176,7 +1188,7 @@
     </main>
     <div class="sidebar">
       <ul class="sidebar-list">
-        <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
+        <li class="sidebar-item-widgets"><a href="#" class="sidebar-anchor-fixtures-title">
             <h3>Fixtures</h3>
           </a></li>
         <li class="sidebar-item"><a href="#item-1" class="sidebar-anchor sidebar-anchor-active">Basic Scoreboard</a>
