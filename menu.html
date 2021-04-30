@@ -562,19 +562,26 @@
 
     @media (max-width: 1253px) {
 
-      html,
-      body {
-        overflow-y: auto;
+      main {
+        height: 100%;
       }
+
+      #body-wrapper {
+        overflow-y: visible;
+      }
+
 
       .main-wrapper {
         margin-left: 10px;
-        margin-bottom: 10vw;
       }
 
       .carousel-wrapper {
         max-width: 700px;
         margin: 0 auto;
+      }
+
+      .carousel-item {
+        margin-top: -100px;
       }
 
       .grid-each {
@@ -586,7 +593,7 @@
 
       .info-area {
         margin-left: -30px;
-        margin-top: -200px;
+        margin-top: -00px;
       }
 
       .info-area ul li {
