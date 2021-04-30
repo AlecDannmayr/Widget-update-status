@@ -1125,7 +1125,7 @@
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
         }, false)
 
-        for (e = 0; e < s.length; e++) {
+        for (e = 0; e < s.length - 1; e++) {
           s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
           var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
           q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
