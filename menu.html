@@ -80,6 +80,7 @@
       z-index: 4;
       right: 0;
       background-color: #12232E;
+      border-left: 2px solid #FF9933;
     }
 
     .sidebar-fixtures {
@@ -91,6 +92,7 @@
       left: 0;
       background-color: #12232E;
       overflow: auto;
+      border-right: 2px solid #FF9933;
     }
 
     .sidebar-fixtures::-webkit-scrollbar {
@@ -539,16 +541,9 @@
     }
 
     @media (max-width: 1175px) {
-      .sidebar-fixtures {
-        width: 200px;
-      }
 
       .main-wrapper {
         margin-left: 370px;
-      }
-
-      .sidebar-fixtures {
-        width: 320px;
       }
 
     }
@@ -1239,7 +1234,6 @@
             w = document.getElementsByClassName("iFrame")[0];
           w.contentWindow.matchRun(x);
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
-          console.log(xx);
         }, false)
 
         for (e = 0; e < s.length; e++) {
