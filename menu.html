@@ -18,6 +18,7 @@
       font-family: "Roboto", sans-serif;
       width: 100%;
       overflow-x: hidden;
+      background-color: #162738;
     }
 
     #body-wrapper {
@@ -61,7 +62,7 @@
       z-index: 2;
       position: relative;
       height: 200%;
-
+      background-color: #162738;
       -webkit-transition: transform 0.7s ease-in-out;
       -moz-transition: transform 0.7s ease-in-out;
       -ms-transition: transform 0.7s ease-in-out;
@@ -75,13 +76,12 @@
 
     .sidebar {
       height: 100%;
-      width: 270px;
+      width: 400px;
       position: fixed;
       top: 0;
-      z-index: 6;
+      z-index: 1;
       right: 0;
       background-color: #12232E;
-      border-left: 2px solid #F65B06;
     }
 
     .sidebar-fixtures {
@@ -96,8 +96,54 @@
     }
 
     .sidebar-fixtures::-webkit-scrollbar {
-      width: 2px;
+      width: 1px;
       background-color: #FF9933;
+    }
+
+    .bar {
+      display: block;
+      height: 5px;
+      width: 50px;
+      background-color: #fbe44a;
+      margin: 10px auto;
+    }
+
+    .button {
+      cursor: pointer;
+      display: inline-block;
+      width: auto;
+      margin: 0 auto;
+      -webkit-transition: all 0.7s ease;
+      -moz-transition: all 0.7s ease;
+      -ms-transition: all 0.7s ease;
+      -o-transition: all 0.7s ease;
+      transition: all 0.7s ease;
+    }
+
+    .nav-right {
+      position: fixed;
+      right: 40px;
+      top: 0px;
+    }
+
+    .nav-right.visible-xs {
+      z-index: 3;
+    }
+
+    .hidden-xs {
+      display: none;
+    }
+
+    .middle {
+      margin: 0 auto;
+    }
+
+    .bar {
+      -webkit-transition: all 0.7s ease;
+      -moz-transition: all 0.7s ease;
+      -ms-transition: all 0.7s ease;
+      -o-transition: all 0.7s ease;
+      transition: all 0.7s ease;
     }
 
     .nav-right.visible-xs .active .bar {
@@ -147,8 +193,12 @@
       margin: 0;
       list-style: none;
       position: relative;
-      margin-top: 0px;
+      margin-top: 150px;
       text-align: left;
+    }
+
+    .sidebar-list {
+      padding-left: 10px;
     }
 
     .sidebar-list-fixtures {
@@ -159,13 +209,13 @@
 
     .sidebar-item,
     .sidebar-item-fixtures {
-      margin: 10px 0px 10px 0px;
+      margin: 30px 0;
       -webkit-transform: translateY(-20px);
       -moz-transform: translateY(-20px);
       -ms-transform: translateY(-20px);
       -o-transform: translateY(-20px);
       transform: translateY(-20px);
-      font-size: 10px;
+      font-size: 12px;
     }
 
     .sidebar-anchor:hover {
@@ -205,10 +255,6 @@
       font-size: 11px;
       color: #fff;
       margin-top: 0px;
-    }
-
-    .sidebar-item li {
-      margin-top: 10px;
     }
 
     .sidebar-anchor,
@@ -253,8 +299,7 @@
       background-color: #132638;
     }
 
-    .sidebar-list-fixtures li:nth-child(1n),
-    .sidebar-list li:nth-child(1n) {
+    .sidebar-list-fixtures li:nth-child(1n) {
       padding: 9px;
     }
 
@@ -336,6 +381,13 @@
       }
     }
 
+    .header h1 {
+      font-size: 2.17em;
+      text-decoration: underline #fbe44a;
+      color: #fff;
+      margin-left: 50px;
+      margin-top: -22.5px;
+    }
 
     .container {
       padding: 0px;
@@ -354,13 +406,13 @@
 
     .info-area ul li {
       padding: 20px 0px;
-      color: #162738;
+      color: #fff;
       font-size: 18px;
     }
 
     .widget-frame-1 h2 {
       font-size: 30px;
-      color: #162738;
+      color: #fff;
     }
 
     iframe {
@@ -519,6 +571,11 @@
         display: none;
       }
 
+      .header h1 {
+        font-size: 100px;
+        margin-left: 0px;
+        text-align: center;
+      }
 
       .grid-each {
         display: flex;
@@ -596,7 +653,11 @@
     }
 
     @media (max-width: 600px) {
-
+      .header h1 {
+        font-size: 60px;
+        text-align: left;
+        margin-left: 10px;
+      }
 
       .button {
         margin-top: 25px;
@@ -643,7 +704,9 @@
     }
 
     @media (max-width: 420px) {
-
+      .header h1 {
+        font-size: 51px
+      }
 
       iframe {
         width: 300px;
@@ -690,6 +753,9 @@
             </div>
           </div>
         </nav>
+        <div class="header">
+          <h1 class="a">Widgets.</h1>
+        </div>
         <div class="container">
           <div class="carousel-wrapper">
             <span id="item-1"></span>
@@ -956,6 +1022,7 @@
               <a class="arrow arrow-prev" href="#item-10"></a>
               <a class="arrow arrow-next" href="#item-1"></a>
             </div>
+
           </div>
         </div>
         <div class="sidebar-fixtures">
@@ -1124,10 +1191,8 @@
 
     </main>
     <div class="sidebar">
+      <div class="border-bar"></div>
       <ul class="sidebar-list">
-        <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
-            <h3 style="margin-bottom: -2px; margin-top: 14px;">Fixtures</h3>
-          </a></li>
         <li class="sidebar-item"><a href="#item-1" class="sidebar-anchor sidebar-anchor-active">Basic Scoreboard</a>
         </li>
         <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Scoreboard</a></li>
