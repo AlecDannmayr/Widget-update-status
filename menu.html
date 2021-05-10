@@ -1096,17 +1096,17 @@
   <script>
 
     window.addEventListener("load", function () {
-      var e = document.getElementById("loading-screen"),
+      var ee = document.getElementById("loading-screen"),
         t = document.getElementById("body-wrapper");
-      (e.style.display = "none"), (t.style.display = "block");
+      (ee.style.display = "none"), (t.style.display = "block");
     });
 
     var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
     fixturesApi
       .then((response) => response.json())
-      .then((jso) => {
-        r = jso.matches,
+      .then((json) => {
+        var r = json.matches,
           s = document.getElementsByClassName("sidebar-anchor-fixtures"),
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
@@ -1124,7 +1124,7 @@
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
         }, false)
 
-        for (e = 0; e < s.length; e++) {
+        for (e = 0; e < 17; e++) {
           s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
           var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
           q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
