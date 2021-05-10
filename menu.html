@@ -1106,7 +1106,7 @@
     fixturesApi
       .then((response) => response.json())
       .then((json) => {
-        var r = json.matches,
+        var r = json,
           s = document.getElementsByClassName("sidebar-anchor-fixtures"),
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
@@ -1116,7 +1116,7 @@
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
           var idNo = event.target.getAttribute("data"),
-            v = r[idNo],
+            v = r.matches[idNo],
             xx = v.id,
             x = v.id,
             w = document.getElementsByClassName("iFrame")[0];
@@ -1125,10 +1125,9 @@
         }, false)
 
         for (e = 0; e < s.length; e++) {
-          console.log(s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0].split(",")[0]);
-          s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0].split(",")[0];
-          var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-          q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
+          s[e].innerHTML = r[e].matches.name.split("v").join("<br />").split(",")[0];
+          var tt = r[e].matches.start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+          q[e].innerHTML = r[e].matches.start.split("T")[1].substring(0, 5);
           n[e].innerHTML = tt;
           // Find day of week from game api date
           // Find year code 
