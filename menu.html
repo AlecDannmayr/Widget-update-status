@@ -1113,7 +1113,9 @@
           q = document.getElementsByClassName("fixture-time");
 
 
-        r.splice(r.indexOf('Quantum Cricket League'), 1);
+        r = r.filter(function (obj) {
+          return obj.competition !== 'Quantum Cricket League';
+        });
         console.log(r);
 
 
