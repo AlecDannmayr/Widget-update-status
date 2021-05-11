@@ -1113,6 +1113,10 @@
           q = document.getElementsByClassName("fixture-time");
 
 
+        r.splice(r.indexOf('Quantum Cricket League'), 1);
+        console.log(r);
+
+
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
           event.preventDefault();
