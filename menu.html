@@ -1112,12 +1112,9 @@
           n = document.getElementsByClassName("fixture-data"),
           q = document.getElementsByClassName("fixture-time");
 
-
         r = r.filter(function (obj) {
           return obj.competition !== 'Quantum Cricket League';
         });
-        console.log(r);
-
 
         document.addEventListener('click', function (event) {
           if (!event.target.matches('.sidebar-anchor-fixtures')) return;
