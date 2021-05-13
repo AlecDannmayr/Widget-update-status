@@ -855,7 +855,9 @@
             xx = v.id,
             x = v.id,
             w = document.getElementsByClassName("iFrame")[0];
-          w.querySelectorAll("#body-wrapper").innerHTML = " ";
+          for (bh = 0; bh < 1000; bh++) {
+            console.log(w.querySelectorAll(".c")[bh]);
+          }
           w.contentWindow.matchRun(x);
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
         }, false)
