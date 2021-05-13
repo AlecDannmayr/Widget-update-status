@@ -855,6 +855,7 @@
             xx = v.id,
             x = v.id,
             w = document.getElementsByClassName("iFrame")[0];
+          console.log(w.childNodes);
           w.querySelectorAll("#body-wrapper").innerHTML = " ";
           w.contentWindow.matchRun(x);
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
