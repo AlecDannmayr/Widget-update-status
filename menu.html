@@ -660,7 +660,7 @@
                   <div class="widget-frame-1">
                     <h2>Basic Scoreboard</h2>
                     <iframe class="iFrame" style="visibility: hidden" onload="this.style.visibility='visible';"
-                      src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                      src="IntCricketWidget1.0/index.html"></iframe>
                   </div>
                   <div class="info-area">
                     <ul>
@@ -855,9 +855,6 @@
             xx = v.id,
             x = v.id,
             w = document.getElementsByClassName("iFrame")[0];
-          for (bh = 0; bh < 1000; bh++) {
-            console.log(w.querySelectorAll(".c")[bh]);
-          }
           w.contentWindow.matchRun(x);
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
         }, false)
