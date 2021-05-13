@@ -855,7 +855,7 @@
             xx = v.id,
             x = v.id,
             w = document.getElementsByClassName("iFrame")[0];
-          console.log(w.querySelectorAll(".sidebar-item-fixtures")[1]);
+          w.querySelectorAll("#body-wrapper").innerHTML = " ";
           w.contentWindow.matchRun(x);
           w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
         }, false)
